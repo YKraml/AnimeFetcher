@@ -1,0 +1,34 @@
+anime/APIObjects/anime/Adaptation.java
+ anime.APIObjects.anime.Adaptation
+anime/APIObjects/anime/Licensor.java
+ anime.APIObjects.anime.Licensor
+anime/APIObjects/anime/Related.java
+ anime.APIObjects.anime.Related
+anime/APIObjects/anime/Studio.java
+ anime.APIObjects.anime.Studio
+anime/APIObjects/anime/Anime.java
+ anime.APIObjects.anime.Anime
+anime/APIObjects/anime/To.java
+ anime.APIObjects.anime.To
+anime/APIObjects/anime/Prop.java
+ anime.APIObjects.anime.Prop
+anime/APIObjects/anime/Producer.java
+ anime.APIObjects.anime.Producer
+anime/APIObjects/anime/Genre.java
+ anime.APIObjects.anime.Genre
+anime/APIObjects/ObjectBuilder.java
+ anime.APIObjects.ObjectBuilder
+anime/APIObjects/anime/Aired.java
+ anime.APIObjects.anime.Aired
+anime/APIObjects/anime/Side_story.java
+ anime.APIObjects.anime.Side_story
+anime/APIObjects/anime/Sequel.java
+ anime.APIObjects.anime.Sequel
+anime/APIObjects/anime/From.java
+ anime.APIObjects.anime.From
+anime/AnimeFetcher.java
+ anime.AnimeFetcher
+anime/Main.java
+ anime.Main
+anime/APIObjects/APICaller.java
+ anime.APIObjects.APICaller
