@@ -6,28 +6,34 @@ anime/APIObjects/anime/Related.java
  anime.APIObjects.anime.Related
 anime/APIObjects/anime/Studio.java
  anime.APIObjects.anime.Studio
+anime/APIObjects/search/Result.java
+ anime.APIObjects.search.Result
 anime/APIObjects/anime/Anime.java
  anime.APIObjects.anime.Anime
 anime/APIObjects/anime/To.java
  anime.APIObjects.anime.To
 anime/APIObjects/anime/Prop.java
  anime.APIObjects.anime.Prop
+anime/AnimeFetcher.java
+ anime.AnimeFetcher
 anime/APIObjects/anime/Producer.java
  anime.APIObjects.anime.Producer
+anime/APIObjects/top/anime/TopSearch.java
+ anime.APIObjects.top.anime.TopSearch
 anime/APIObjects/anime/Genre.java
  anime.APIObjects.anime.Genre
-anime/APIObjects/ObjectBuilder.java
- anime.APIObjects.ObjectBuilder
 anime/APIObjects/anime/Aired.java
  anime.APIObjects.anime.Aired
 anime/APIObjects/anime/Side_story.java
  anime.APIObjects.anime.Side_story
+anime/APIObjects/top/anime/Top.java
+ anime.APIObjects.top.anime.Top
 anime/APIObjects/anime/Sequel.java
  anime.APIObjects.anime.Sequel
+anime/APIObjects/search/AnimeSearch.java
+ anime.APIObjects.search.AnimeSearch
 anime/APIObjects/anime/From.java
  anime.APIObjects.anime.From
-anime/AnimeFetcher.java
- anime.AnimeFetcher
 anime/Main.java
  anime.Main
 anime/APIObjects/APICaller.java

@@ -5,13 +5,9 @@
  */
 package anime;
 
-import anime.APIObjects.APICaller;
-import anime.APIObjects.anime.Anime;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import anime.APIObjects.search.AnimeSearch;
 
-import java.io.IOException;
-import java.util.concurrent.TimeUnit;
+import java.util.Optional;
 
 /**
  * @author yanni
@@ -21,25 +17,13 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    private static void main(String[] args) {
+    public static void main(String[] args) {
 
-        ObjectMapper om = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-        for (int i = 105; i < 10000; i++) {
-            String data = APICaller.getData("https://api.jikan.moe/v3/anime/" + i);
-            try {
-                TimeUnit.SECONDS.sleep(5);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-            try {
-                Anime anime = om.readValue(data, Anime.class);
-                System.out.println(anime.getTitle());
-                System.out.println(anime.getScore());
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        AnimeFetcher animeFetcher = new AnimeFetcher();
 
+        Optional<AnimeSearch> animeSearch = animeFetcher.getAnimeSearchByName("Naruto");
+
+        System.out.println("jo");
 
     }
 
