@@ -1,40 +1,116 @@
-anime/APIObjects/anime/Adaptation.java
- anime.APIObjects.anime.Adaptation
-anime/APIObjects/anime/Licensor.java
- anime.APIObjects.anime.Licensor
-anime/APIObjects/anime/Related.java
- anime.APIObjects.anime.Related
-anime/APIObjects/anime/Studio.java
- anime.APIObjects.anime.Studio
-anime/APIObjects/search/Result.java
- anime.APIObjects.search.Result
-anime/APIObjects/anime/Anime.java
- anime.APIObjects.anime.Anime
-anime/APIObjects/anime/To.java
- anime.APIObjects.anime.To
-anime/APIObjects/anime/Prop.java
- anime.APIObjects.anime.Prop
-anime/AnimeFetcher.java
- anime.AnimeFetcher
-anime/APIObjects/anime/Producer.java
- anime.APIObjects.anime.Producer
-anime/APIObjects/top/anime/TopSearch.java
- anime.APIObjects.top.anime.TopSearch
-anime/APIObjects/anime/Genre.java
- anime.APIObjects.anime.Genre
-anime/APIObjects/anime/Aired.java
- anime.APIObjects.anime.Aired
-anime/APIObjects/anime/Side_story.java
- anime.APIObjects.anime.Side_story
-anime/APIObjects/top/anime/Top.java
- anime.APIObjects.top.anime.Top
-anime/APIObjects/anime/Sequel.java
- anime.APIObjects.anime.Sequel
-anime/APIObjects/search/AnimeSearch.java
- anime.APIObjects.search.AnimeSearch
-anime/APIObjects/anime/From.java
- anime.APIObjects.anime.From
-anime/Main.java
- anime.Main
-anime/APIObjects/APICaller.java
- anime.APIObjects.APICaller
+anime/news/News.java
+ anime.news.News
+anime/reviews/Reviewer.java
+ anime.reviews.Reviewer
+anime/characters_staff/VoiceActor.java
+ anime.characters_staff.VoiceActor
+anime/characters_staff/Staff.java
+ anime.characters_staff.Staff
+caller/ApiCaller.java
+ caller.ApiCaller
+anime/anime/Related.java
+ anime.anime.Related
+anime/stats/_8.java
+ anime.stats._8
+anime/reviews/Review.java
+ anime.reviews.Review
+anime/anime/From.java
+ anime.anime.From
+anime/anime/AlternativeVersion.java
+ anime.anime.AlternativeVersion
+anime/stats/_3.java
+ anime.stats._3
+anime/anime/Prop.java
+ anime.anime.Prop
+anime/anime/Producer.java
+ anime.anime.Producer
+anime/stats/_9.java
+ anime.stats._9
+anime/characters_staff/CharacterStaff.java
+ anime.characters_staff.CharacterStaff
+anime/anime/ExternalLink.java
+ anime.anime.ExternalLink
+anime/stats/_2.java
+ anime.stats._2
+anime/episodes/Episodes.java
+ anime.episodes.Episodes
+anime/userupdates/UserUpdates.java
+ anime.userupdates.UserUpdates
+anime/news/Article.java
+ anime.news.Article
+anime/anime/Genre.java
+ anime.anime.Genre
+anime/userupdates/User.java
+ anime.userupdates.User
+anime/recommendations/Recommendations.java
+ anime.recommendations.Recommendations
+anime/forum/LastPost.java
+ anime.forum.LastPost
+anime/anime/Theme.java
+ anime.anime.Theme
+anime/stats/Stats.java
+ anime.stats.Stats
+anime/pictures/Pictures.java
+ anime.pictures.Pictures
+anime/anime/Other.java
+ anime.anime.Other
+anime/recommendations/Recommendation.java
+ anime.recommendations.Recommendation
+anime/anime/Adaptation.java
+ anime.anime.Adaptation
+anime/anime/Anime.java
+ anime.anime.Anime
+anime/episodes/Episode.java
+ anime.episodes.Episode
+anime/stats/_5.java
+ anime.stats._5
+anime/forum/Forum.java
+ anime.forum.Forum
+anime/videos/Episode.java
+ anime.videos.Episode
+anime/stats/_7.java
+ anime.stats._7
+main/MyObjectMapper.java
+ main.MyObjectMapper
+anime/anime/Studio.java
+ anime.anime.Studio
+anime/stats/Scores.java
+ anime.stats.Scores
+anime/stats/_6.java
+ anime.stats._6
+anime/pictures/Picture.java
+ anime.pictures.Picture
+anime/anime/Licensor.java
+ anime.anime.Licensor
+anime/stats/_4.java
+ anime.stats._4
+anime/reviews/Reviews.java
+ anime.reviews.Reviews
+anime/stats/_1.java
+ anime.stats._1
+anime/characters_staff/Character.java
+ anime.characters_staff.Character
+anime/moreinfo/MoreInfo.java
+ anime.moreinfo.MoreInfo
+anime/reviews/Scores.java
+ anime.reviews.Scores
+anime/videos/Promo.java
+ anime.videos.Promo
+caller/AbstractCaller.java
+ caller.AbstractCaller
+anime/videos/Videos.java
+ anime.videos.Videos
+anime/forum/Topic.java
+ anime.forum.Topic
+anime/stats/_10.java
+ anime.stats._10
+anime/anime/Sequel.java
+ anime.anime.Sequel
+anime/anime/To.java
+ anime.anime.To
+anime/anime/Aired.java
+ anime.anime.Aired
+main/Main.java
+ main.Main
+caller/CallerAnime.java
+ caller.CallerAnime
