@@ -10,14 +10,16 @@ caller/ApiCaller.java
  caller.ApiCaller
 anime/anime/Related.java
  anime.anime.Related
+caller/RequestEnums.java
+ caller.RequestEnums
 anime/stats/_8.java
  anime.stats._8
 anime/reviews/Review.java
  anime.reviews.Review
 anime/anime/From.java
  anime.anime.From
-anime/anime/AlternativeVersion.java
- anime.anime.AlternativeVersion
+anime/anime/Character.java
+ anime.anime.Character
 anime/stats/_3.java
  anime.stats._3
 anime/anime/Prop.java
@@ -30,6 +32,8 @@ anime/characters_staff/CharacterStaff.java
  anime.characters_staff.CharacterStaff
 anime/anime/ExternalLink.java
  anime.anime.ExternalLink
+anime/anime/Prequel.java
+ anime.anime.Prequel
 anime/stats/_2.java
  anime.stats._2
 anime/episodes/Episodes.java
@@ -42,14 +46,22 @@ anime/anime/Genre.java
  anime.anime.Genre
 anime/userupdates/User.java
  anime.userupdates.User
+caller/CouldNotReachJikanException.java
+ caller.CouldNotReachJikanException
 anime/recommendations/Recommendations.java
  anime.recommendations.Recommendations
+caller/MyException.java
+ caller.MyException
+anime/anime/Parent_story.java
+ anime.anime.Parent_story
 anime/forum/LastPost.java
  anime.forum.LastPost
+anime/anime/Spin_off.java
+ anime.anime.Spin_off
 anime/anime/Theme.java
  anime.anime.Theme
-anime/stats/Stats.java
- anime.stats.Stats
+main/Main.java
+ main.Main
 anime/pictures/Pictures.java
  anime.pictures.Pictures
 anime/anime/Other.java
@@ -58,6 +70,8 @@ anime/recommendations/Recommendation.java
  anime.recommendations.Recommendation
 anime/anime/Adaptation.java
  anime.anime.Adaptation
+main/CouldNotMapException.java
+ main.CouldNotMapException
 anime/anime/Anime.java
  anime.anime.Anime
 anime/episodes/Episode.java
@@ -66,10 +80,10 @@ anime/stats/_5.java
  anime.stats._5
 anime/forum/Forum.java
  anime.forum.Forum
+anime/anime/Alternative_version.java
+ anime.anime.Alternative_version
 anime/videos/Episode.java
  anime.videos.Episode
-anime/stats/_7.java
- anime.stats._7
 main/MyObjectMapper.java
  main.MyObjectMapper
 anime/anime/Studio.java
@@ -78,6 +92,10 @@ anime/stats/Scores.java
  anime.stats.Scores
 anime/stats/_6.java
  anime.stats._6
+anime/anime/Full_story.java
+ anime.anime.Full_story
+anime/anime/Side_story.java
+ anime.anime.Side_story
 anime/pictures/Picture.java
  anime.pictures.Picture
 anime/anime/Licensor.java
@@ -86,12 +104,16 @@ anime/stats/_4.java
  anime.stats._4
 anime/reviews/Reviews.java
  anime.reviews.Reviews
+caller/AnimeCaller.java
+ caller.AnimeCaller
 anime/stats/_1.java
  anime.stats._1
 anime/characters_staff/Character.java
  anime.characters_staff.Character
 anime/moreinfo/MoreInfo.java
  anime.moreinfo.MoreInfo
+anime/anime/Summary.java
+ anime.anime.Summary
 anime/reviews/Scores.java
  anime.reviews.Scores
 anime/videos/Promo.java
@@ -106,11 +128,13 @@ anime/stats/_10.java
  anime.stats._10
 anime/anime/Sequel.java
  anime.anime.Sequel
+anime/anime/Alternative_setting.java
+ anime.anime.Alternative_setting
 anime/anime/To.java
  anime.anime.To
 anime/anime/Aired.java
  anime.anime.Aired
-main/Main.java
- main.Main
-caller/CallerAnime.java
- caller.CallerAnime
+anime/stats/_7.java
+ anime.stats._7
+anime/stats/Stats.java
+ anime.stats.Stats

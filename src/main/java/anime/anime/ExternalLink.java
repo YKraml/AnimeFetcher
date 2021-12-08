@@ -1,5 +1,13 @@
 package anime.anime; 
 public class ExternalLink{
-    public String name;
-    public String url;
+    private String name;
+    private String url;
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
 }

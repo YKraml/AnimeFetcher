@@ -11,24 +11,26 @@ import java.util.concurrent.TimeUnit;
 public class ApiCaller {
 
     private static final int STANDARD_RETRIES = 3;
+    private static final long SLEEP_TIME = 1000;
+    private static final long TIMEOUT_WAIT = 2000;
     private static ApiCaller instance;
 
     public static ApiCaller getInstance() {
-        if(instance == null){
+        if (instance == null) {
             instance = new ApiCaller();
         }
         return instance;
     }
 
-    private ApiCaller(){
+    private ApiCaller() {
 
     }
 
-    public synchronized String getDataFromJikan(String urlString, int retries){
+    public synchronized String getDataFromJikan(String urlString, int retries) throws CouldNotReachJikanException {
 
         String content = "";
 
-        OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(5000, TimeUnit.MILLISECONDS).build();
+        OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(TIMEOUT_WAIT, TimeUnit.MILLISECONDS).build();
         Request request = new Request.Builder().url(urlString).build();
         try {
             Response response = client.newCall(request).execute();
@@ -36,20 +38,20 @@ public class ApiCaller {
         } catch (SocketTimeoutException e) {
             if (retries > 0) {
                 try {
-                    Thread.sleep(1000);
+                    Thread.sleep(SLEEP_TIME);
                 } catch (InterruptedException ex) {
                     e.printStackTrace();
                 }
                 return getDataFromJikan(urlString, --retries);
             }
         } catch (IOException ex) {
-            System.out.println("IO Exception: " + ex.getMessage());
+            throw new CouldNotReachJikanException(urlString);
         }
 
         return content;
     }
 
-    public String getDataFromJikan(String url) {
+    public String getDataFromJikan(String url) throws CouldNotReachJikanException {
         return this.getDataFromJikan(url, STANDARD_RETRIES);
     }
 }

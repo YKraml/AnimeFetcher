@@ -1,10 +1,7 @@
 package main;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import java.util.Optional;
 
 public class MyObjectMapper {
 
@@ -12,22 +9,17 @@ public class MyObjectMapper {
 
     public MyObjectMapper() {
         this.objectMapper = new ObjectMapper();
-        objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        //objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
 
-    public <T> Optional<T> map(String data, Class<T> t){
+    public <T> T map(String data, Class<T> t) throws CouldNotMapException {
 
         try {
-            T mappedObject = objectMapper.readValue(data, t);
-            return Optional.ofNullable(mappedObject);
+            return objectMapper.readValue(data, t);
         } catch (JsonProcessingException e) {
-            System.out.println("Could not map to " + t.getName() + " | " + data);
-            System.out.println(e.getMessage());
+            throw new CouldNotMapException(data, t);
         }
-
-
-        return Optional.empty();
     }
 
 }

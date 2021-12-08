@@ -1,7 +1,23 @@
 package anime.anime; 
 public class Producer{
-    public int mal_id;
-    public String type;
-    public String name;
-    public String url;
+    private int mal_id;
+    private String type;
+    private String name;
+    private String url;
+
+    public int getMal_id() {
+        return mal_id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
 }

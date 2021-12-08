@@ -1,5 +1,13 @@
 package anime.anime; 
 public class Prop{
-    public From from;
-    public To to;
+    private From from;
+    private To to;
+
+    public From getFrom() {
+        return from;
+    }
+
+    public To getTo() {
+        return to;
+    }
 }

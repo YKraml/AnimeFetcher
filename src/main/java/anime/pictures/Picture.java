@@ -1,5 +1,13 @@
 package anime.pictures; 
 public class Picture{
-    public String large;
-    public String small;
+    private String large;
+    private String small;
+
+    public String getLarge() {
+        return large;
+    }
+
+    public String getSmall() {
+        return small;
+    }
 }

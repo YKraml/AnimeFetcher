@@ -1,5 +1,14 @@
 package anime.stats; 
 public class _1{
-    public int votes;
-    public double percentage;
+    private int votes;
+    private double percentage;
+
+    public double getPercentage() {
+        return percentage;
+    }
+
+    public int getVotes() {
+        return votes;
+    }
+
 }
