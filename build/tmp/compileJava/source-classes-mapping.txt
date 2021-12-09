@@ -6,12 +6,12 @@ anime/characters_staff/VoiceActor.java
  anime.characters_staff.VoiceActor
 anime/characters_staff/Staff.java
  anime.characters_staff.Staff
-caller/ApiCaller.java
- caller.ApiCaller
+anime/anime/Alternative_setting.java
+ anime.anime.Alternative_setting
 anime/anime/Related.java
  anime.anime.Related
-caller/RequestEnums.java
- caller.RequestEnums
+anime/stats/_10.java
+ anime.stats._10
 anime/stats/_8.java
  anime.stats._8
 anime/reviews/Review.java
@@ -46,12 +46,12 @@ anime/anime/Genre.java
  anime.anime.Genre
 anime/userupdates/User.java
  anime.userupdates.User
-caller/CouldNotReachJikanException.java
- caller.CouldNotReachJikanException
+anime/stats/Stats.java
+ anime.stats.Stats
 anime/recommendations/Recommendations.java
  anime.recommendations.Recommendations
-caller/MyException.java
- caller.MyException
+anime/stats/_7.java
+ anime.stats._7
 anime/anime/Parent_story.java
  anime.anime.Parent_story
 anime/forum/LastPost.java
@@ -70,8 +70,8 @@ anime/recommendations/Recommendation.java
  anime.recommendations.Recommendation
 anime/anime/Adaptation.java
  anime.anime.Adaptation
-main/CouldNotMapException.java
- main.CouldNotMapException
+anime/anime/Aired.java
+ anime.anime.Aired
 anime/anime/Anime.java
  anime.anime.Anime
 anime/episodes/Episode.java
@@ -84,8 +84,8 @@ anime/anime/Alternative_version.java
  anime.anime.Alternative_version
 anime/videos/Episode.java
  anime.videos.Episode
-main/MyObjectMapper.java
- main.MyObjectMapper
+anime/anime/To.java
+ anime.anime.To
 anime/anime/Studio.java
  anime.anime.Studio
 anime/stats/Scores.java
@@ -104,8 +104,8 @@ anime/stats/_4.java
  anime.stats._4
 anime/reviews/Reviews.java
  anime.reviews.Reviews
-caller/AnimeCaller.java
- caller.AnimeCaller
+anime/anime/Sequel.java
+ anime.anime.Sequel
 anime/stats/_1.java
  anime.stats._1
 anime/characters_staff/Character.java
@@ -124,17 +124,19 @@ anime/videos/Videos.java
  anime.videos.Videos
 anime/forum/Topic.java
  anime.forum.Topic
-anime/stats/_10.java
- anime.stats._10
-anime/anime/Sequel.java
- anime.anime.Sequel
-anime/anime/Alternative_setting.java
- anime.anime.Alternative_setting
-anime/anime/To.java
- anime.anime.To
-anime/anime/Aired.java
- anime.anime.Aired
-anime/stats/_7.java
- anime.stats._7
-anime/stats/Stats.java
- anime.stats.Stats
+util/ApiCaller.java
+ util.ApiCaller
+caller/AnimeCaller.java
+ caller.AnimeCaller
+exceptions/MyException.java
+ exceptions.MyException
+enums/AnimeRequests.java
+ enums.AnimeRequests
+exceptions/CouldNotReachJikanException.java
+ exceptions.CouldNotReachJikanException
+exceptions/CouldNotGetObjectException.java
+ exceptions.CouldNotGetObjectException
+util/MyObjectMapper.java
+ util.MyObjectMapper
+exceptions/CouldNotMapException.java
+ exceptions.CouldNotMapException

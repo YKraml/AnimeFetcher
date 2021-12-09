@@ -12,7 +12,11 @@ import anime.reviews.Reviews;
 import anime.stats.Stats;
 import anime.userupdates.UserUpdates;
 import anime.videos.Videos;
-import main.MyObjectMapper;
+import enums.AnimeRequests;
+import exceptions.CouldNotGetObjectException;
+import exceptions.MyException;
+import util.ApiCaller;
+import util.MyObjectMapper;
 
 public class AnimeCaller extends AbstractCaller {
 
@@ -45,62 +49,61 @@ public class AnimeCaller extends AbstractCaller {
         return ApiCaller.getInstance().getDataFromJikan(url);
     }
 
-    private  <K> K getObject(String id, RequestEnums request, String parameter) {
+    private  <K> K getObject(String id, AnimeRequests request, String parameter) throws CouldNotGetObjectException {
         try {
             String json = this.getJson(id, request.getRequestString(), parameter);
             return objectMapper.map(json, request.getRequestClass());
         }catch (MyException e){
-
+            throw new CouldNotGetObjectException(e, id, request.getRequestString(), parameter);
         }
-        return null;
     }
 
-    public Anime getAnime(String id) {
-        return this.getObject(id, RequestEnums.ANIME, "");
+    public Anime getAnime(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.ANIME, "");
     }
 
-    public CharacterStaff getCharacterStaff(String id) {
-        return this.getObject(id, RequestEnums.CHARACTER_STAFF, "");
+    public CharacterStaff getCharacterStaff(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.CHARACTER_STAFF, "");
     }
 
-    public Episodes getEpisodes(String id, int page){
-        return this.getObject(id, RequestEnums.EPISODES, String.valueOf(page));
+    public Episodes getEpisodes(String id, int page) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.EPISODES, String.valueOf(page));
     }
 
-    public News getNews(String id){
-        return this.getObject(id, RequestEnums.NEWS, "");
+    public News getNews(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.NEWS, "");
     }
 
-    public Pictures getPictures(String id){
-        return this.getObject(id, RequestEnums.PICTURES, "");
+    public Pictures getPictures(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.PICTURES, "");
     }
 
-    public Videos getVideos(String id){
-        return this.getObject(id, RequestEnums.VIDEOS, "");
+    public Videos getVideos(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.VIDEOS, "");
     }
 
-    public Stats getStats(String id){
-        return this.getObject(id, RequestEnums.STATS,"");
+    public Stats getStats(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.STATS,"");
     }
 
-    public Forum getForum(String id){
-        return this.getObject(id, RequestEnums.FORUM, "");
+    public Forum getForum(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.FORUM, "");
     }
 
-    public MoreInfo getMoreInfo(String id){
-        return this.getObject(id, RequestEnums.MORE_INFO, "");
+    public MoreInfo getMoreInfo(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.MORE_INFO, "");
     }
 
-    public Reviews getReviews(String id, int page){
-        return this.getObject(id, RequestEnums.REVIEWS, String.valueOf(page));
+    public Reviews getReviews(String id, int page) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.REVIEWS, String.valueOf(page));
     }
 
-    public Recommendations getRecommendations(String id){
-        return this.getObject(id, RequestEnums.RECOMMENDATIONS, "");
+    public Recommendations getRecommendations(String id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.RECOMMENDATIONS, "");
     }
 
-    public UserUpdates getUserUpdates(String id, int page){
-        return this.getObject(id, RequestEnums.USER_UPDATES, String.valueOf(page));
+    public UserUpdates getUserUpdates(String id, int page) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.USER_UPDATES, String.valueOf(page));
     }
 
 

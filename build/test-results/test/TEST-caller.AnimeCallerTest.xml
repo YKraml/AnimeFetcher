@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="caller.AnimeCallerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-12-08T19:01:16" hostname="DESKTOP-RDK6FPK" time="0.644">
+<testsuite name="caller.AnimeCallerTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2021-12-09T23:08:57" hostname="DESKTOP-RDK6FPK" time="36.514">
   <properties/>
-  <testcase name="getVideos()" classname="caller.AnimeCallerTest" time="0.644"/>
+  <testcase name="getUserUpdates()" classname="caller.AnimeCallerTest" time="0.514"/>
+  <testcase name="getNews()" classname="caller.AnimeCallerTest" time="0.301"/>
+  <testcase name="getCharacterStaff()" classname="caller.AnimeCallerTest" time="3.756"/>
+  <testcase name="getVideos()" classname="caller.AnimeCallerTest" time="3.894"/>
+  <testcase name="getPictures()" classname="caller.AnimeCallerTest" time="3.998"/>
+  <testcase name="getEpisodes()" classname="caller.AnimeCallerTest" time="2.005"/>
+  <testcase name="getMoreInfo()" classname="caller.AnimeCallerTest" time="3.994"/>
+  <testcase name="getAnime()" classname="caller.AnimeCallerTest" time="4.024"/>
+  <testcase name="getForum()" classname="caller.AnimeCallerTest" time="3.98"/>
+  <testcase name="getStats()" classname="caller.AnimeCallerTest" time="4.003"/>
+  <testcase name="getRecommendations()" classname="caller.AnimeCallerTest" time="3.998"/>
+  <testcase name="getReviews()" classname="caller.AnimeCallerTest" time="2.047"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

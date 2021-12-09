@@ -12,75 +12,122 @@ import anime.reviews.Reviews;
 import anime.stats.Stats;
 import anime.userupdates.UserUpdates;
 import anime.videos.Videos;
+import exceptions.CouldNotGetObjectException;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 class AnimeCallerTest {
 
     private static AnimeCaller animeCaller;
-    private final String id = "21";
+    private final String id = "1735";
 
     @BeforeAll
-    static void init(){
+    static void init() {
         animeCaller = AnimeCaller.getInstance();
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getAnime() {
-        Anime anime = animeCaller.getAnime(id);
+        Anime anime = null;
+        try {
+            anime = animeCaller.getAnime(id);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+        }
+        assert anime != null;
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getCharacterStaff() {
-        CharacterStaff characterStaff = animeCaller.getCharacterStaff(id);
+        CharacterStaff characterStaff = null;
+        try {
+            characterStaff = animeCaller.getCharacterStaff(id);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+        }
+        assert characterStaff != null;
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getEpisodes() {
-        Episodes episodes = animeCaller.getEpisodes(id, 1);
+        Episodes episodes = null;
+        try {
+            episodes = animeCaller.getEpisodes(id, 1);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+        }
+        assert episodes != null;
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getNews() {
-        News news = animeCaller.getNews(id);
+        News news = null;
+        try {
+            news = animeCaller.getNews(id);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+            System.out.println(e.getInnerException().getMessage());
+        }
+        assert news != null;
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getPictures() {
-        Pictures pictures = animeCaller.getPictures(id);
+        Pictures pictures = null;
+        try {
+            pictures = animeCaller.getPictures(id);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+        }
+        assert pictures != null;
     }
 
-    @org.junit.jupiter.api.Test
-    void getVideos() {
+    @Test
+    void getVideos() throws CouldNotGetObjectException {
         Videos videos = animeCaller.getVideos(id);
     }
 
-    @org.junit.jupiter.api.Test
-    void getStats() {
+    @Test
+    void getStats() throws CouldNotGetObjectException {
         Stats stats = animeCaller.getStats(id);
     }
 
-    @org.junit.jupiter.api.Test
-    void getForum() {
+    @Test
+    void getForum() throws CouldNotGetObjectException {
         Forum forum = animeCaller.getForum(id);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getMoreInfo() {
-        MoreInfo moreInfo = animeCaller.getMoreInfo(id);
+        MoreInfo moreInfo = null;
+        try {
+            moreInfo = animeCaller.getMoreInfo(id);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        assert moreInfo != null;
     }
 
-    @org.junit.jupiter.api.Test
-    void getReviews() {
+    @Test
+    void getReviews() throws CouldNotGetObjectException {
         Reviews reviews = animeCaller.getReviews(id, 1);
     }
 
-    @org.junit.jupiter.api.Test
-    void getRecommendations() {
+    @Test
+    void getRecommendations() throws CouldNotGetObjectException {
         Recommendations recommendations = animeCaller.getRecommendations(id);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void getUserUpdates() {
-        UserUpdates userUpdates = animeCaller.getUserUpdates(id, 1);
+        UserUpdates userUpdates = null;
+        try {
+            userUpdates = animeCaller.getUserUpdates(id, 1);
+        } catch (CouldNotGetObjectException e) {
+            e.printStackTrace();
+            System.out.println(e.getMessage());
+        }
+        assert userUpdates != null;
     }
 }
