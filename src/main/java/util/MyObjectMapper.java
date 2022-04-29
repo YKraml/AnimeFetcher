@@ -10,7 +10,6 @@ public class MyObjectMapper {
 
     public MyObjectMapper() {
         this.objectMapper = new ObjectMapper();
-        //objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
 

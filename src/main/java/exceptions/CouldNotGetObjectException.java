@@ -2,20 +2,17 @@ package exceptions;
 
 public class CouldNotGetObjectException extends MyException {
 
-    private final String id;
-    private final String request;
-    private final String parameter;
+    String url;
 
-    public CouldNotGetObjectException(Exception innerException, String id, String request, String parameter) {
+    public CouldNotGetObjectException(Exception innerException, String url) {
         super(innerException);
-        this.id = id;
-        this.request = request;
-        this.parameter = parameter;
+        this.url = url;
     }
 
 
     @Override
     protected String getPrivateMessage() {
-        return "Could not get Data from id: \"" + id + "\", request: \"" + request + "\", parameter: \"" + parameter + "\"";
+        return "Could not get Data from: \"" + url + "\"";
     }
+
 }

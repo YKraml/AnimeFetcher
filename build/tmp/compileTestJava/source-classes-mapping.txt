@@ -1,2 +1,6 @@
 caller/AnimeCallerTest.java
  caller.AnimeCallerTest
+caller/CharacterCallerTest.java
+ caller.CharacterCallerTest
+caller/TopCallerTest.java
+ caller.TopCallerTest

@@ -29,4 +29,10 @@ public abstract class MyException extends Exception{
     }
 
     protected abstract String getPrivateMessage();
+
+    @Override
+    public void printStackTrace() {
+        //innerException.printStackTrace();
+        super.printStackTrace();
+    }
 }

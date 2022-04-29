@@ -1,110 +1,124 @@
 package caller;
 
-import anime.anime.Anime;
-import anime.characters_staff.CharacterStaff;
-import anime.episodes.Episodes;
-import anime.forum.Forum;
-import anime.moreinfo.MoreInfo;
-import anime.news.News;
-import anime.pictures.Pictures;
-import anime.recommendations.Recommendations;
-import anime.reviews.Reviews;
-import anime.stats.Stats;
-import anime.userupdates.UserUpdates;
-import anime.videos.Videos;
+
 import enums.AnimeRequests;
 import exceptions.CouldNotGetObjectException;
-import exceptions.MyException;
-import util.ApiCaller;
-import util.MyObjectMapper;
+import jikan.anime.animeById.AnimeById;
+import jikan.anime.animeCharacters.AnimeCharacters;
+import jikan.anime.animeEpisodeById.AnimeEpisodeById;
+import jikan.anime.animeEpisodes.AnimeEpisodes;
+import jikan.anime.animeExternal.AnimeExternal;
+import jikan.anime.animeForum.AnimeForum;
+import jikan.anime.animeMoreInfo.AnimeMoreInfo;
+import jikan.anime.animeNews.AnimeNews;
+import jikan.anime.animePictures.AnimePictures;
+import jikan.anime.animeRecommendations.AnimeRecommendations;
+import jikan.anime.animeRelations.AnimeRelations;
+import jikan.anime.animeReviews.AnimeReviews;
+import jikan.anime.animeStaff.AnimeStaff;
+import jikan.anime.animeStatistics.AnimeStatistics;
+import jikan.anime.animeThemes.AnimeThemes;
+import jikan.anime.animeUserUpdates.AnimeUserUpdates;
+import jikan.anime.animeVideos.AnimeVideos;
 
 public class AnimeCaller extends AbstractCaller {
 
 
-    private static final String ID_REGEX = "%ID%";
-    private static final String REQUEST_REGEX = "%REQUEST%";
-    private static final String PARAMETER_REGEX = "%PARAMETER%";
-    private static final String END_POINT_URL = jikanUrl + "anime/" + ID_REGEX + "/" + REQUEST_REGEX + "/" + PARAMETER_REGEX;
 
-    private final MyObjectMapper objectMapper;
 
     private static AnimeCaller instance;
-    private AnimeCaller() {
-        this.objectMapper = new MyObjectMapper();
+
+    public AnimeCaller(){
+        super("anime");
     }
 
+
     public static AnimeCaller getInstance() {
-        if(instance == null){
+        if (instance == null) {
             instance = new AnimeCaller();
         }
         return instance;
     }
 
-    private String makeUrl(String id, String request, String parameter) {
-        return END_POINT_URL.replace(ID_REGEX, id).replace(REQUEST_REGEX, request).replace(PARAMETER_REGEX, parameter);
+
+
+
+    public AnimeById getAnimeById(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeById);
     }
 
-    private String getJson(String id, String request, String parameter) throws MyException {
-        String url = this.makeUrl(id, request, parameter);
-        return ApiCaller.getInstance().getDataFromJikan(url);
+    public AnimeCharacters getAnimeCharacters(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeCharacters);
     }
 
-    private  <K> K getObject(String id, AnimeRequests request, String parameter) throws CouldNotGetObjectException {
-        try {
-            String json = this.getJson(id, request.getRequestString(), parameter);
-            return objectMapper.map(json, request.getRequestClass());
-        }catch (MyException e){
-            throw new CouldNotGetObjectException(e, id, request.getRequestString(), parameter);
-        }
+    public AnimeStaff getAnimeStaff(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeStaff);
     }
 
-    public Anime getAnime(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.ANIME, "");
+    public AnimeEpisodes getAnimeEpisodes(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeEpisodes);
     }
 
-    public CharacterStaff getCharacterStaff(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.CHARACTER_STAFF, "");
+
+    public AnimeEpisodeById getAnimeEpisodeById(int id, int episode) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeEpisodeById, String.valueOf(episode));
     }
 
-    public Episodes getEpisodes(String id, int page) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.EPISODES, String.valueOf(page));
+
+    public AnimeNews getAnimeNews(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeNews);
     }
 
-    public News getNews(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.NEWS, "");
+    public AnimeForum getAnimeForum(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeForum);
     }
 
-    public Pictures getPictures(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.PICTURES, "");
+    public AnimeVideos getAnimeVideos(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeVideos);
     }
 
-    public Videos getVideos(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.VIDEOS, "");
+    public AnimePictures getAnimePictures(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimePictures);
     }
 
-    public Stats getStats(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.STATS,"");
+    public AnimeStatistics getAnimeStatistics(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeStatistics);
     }
 
-    public Forum getForum(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.FORUM, "");
+    public AnimeMoreInfo getAnimeMoreInfo(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeMoreInfo);
     }
 
-    public MoreInfo getMoreInfo(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.MORE_INFO, "");
+    public AnimeRecommendations getAnimeRecommendations(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeRecommendations);
     }
 
-    public Reviews getReviews(String id, int page) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.REVIEWS, String.valueOf(page));
+    public AnimeUserUpdates getAnimeUserUpdates(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeUserUpdates);
     }
 
-    public Recommendations getRecommendations(String id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.RECOMMENDATIONS, "");
+    public AnimeReviews getAnimeReviews(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeReviews);
     }
 
-    public UserUpdates getUserUpdates(String id, int page) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.USER_UPDATES, String.valueOf(page));
+    public AnimeRelations getAnimeRelations(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeRelations);
     }
+
+    public AnimeThemes getAnimeThemes(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeThemes);
+    }
+
+    public AnimeExternal getAnimeExternal(int id) throws CouldNotGetObjectException {
+        return this.getObject(id, AnimeRequests.AnimeExternal);
+    }
+
+    /*
+    public AnimeSearch getAnimeSearch(int id) throws CouldNotGetObjectException {
+        // TODO: 29.04.2022 Search implementieren
+        return this.getObject(id, AnimeRequests.AnimeSearch, "");
+    }
+    */
 
 
 }
