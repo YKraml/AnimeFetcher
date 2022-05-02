@@ -15,6 +15,7 @@ import jikan.anime.animePictures.AnimePictures;
 import jikan.anime.animeRecommendations.AnimeRecommendations;
 import jikan.anime.animeRelations.AnimeRelations;
 import jikan.anime.animeReviews.AnimeReviews;
+import jikan.anime.animeSearch.AnimeSearch;
 import jikan.anime.animeStaff.AnimeStaff;
 import jikan.anime.animeStatistics.AnimeStatistics;
 import jikan.anime.animeThemes.AnimeThemes;
@@ -113,12 +114,11 @@ public class AnimeCaller extends AbstractCaller {
         return this.getObject(id, AnimeRequests.AnimeExternal);
     }
 
-    /*
-    public AnimeSearch getAnimeSearch(int id) throws CouldNotGetObjectException {
-        // TODO: 29.04.2022 Search implementieren
-        return this.getObject(id, AnimeRequests.AnimeSearch, "");
+
+    public AnimeSearch getAnimeSearch(AnimeSearchTermBuilder animeSearchTermBuilder) throws CouldNotGetObjectException {
+        return this.getObject(animeSearchTermBuilder.buildTerm(), AnimeRequests.AnimeSearch);
     }
-    */
+
 
 
 }

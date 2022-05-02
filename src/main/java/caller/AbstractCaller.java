@@ -2,6 +2,8 @@ package caller;
 
 import enums.AbstractRequest;
 import exceptions.CouldNotGetObjectException;
+import exceptions.CouldNotMapException;
+import exceptions.CouldNotReachJikanException;
 import exceptions.MyException;
 import util.ApiCaller;
 import util.MyObjectMapper;
@@ -49,5 +51,15 @@ public abstract class AbstractCaller {
         return getObject(id, request, "");
     }
 
+    protected <K> K getObject(String restUrl, AbstractRequest request) throws CouldNotGetObjectException {
+        String url = JIKAN_URL + restUrl;
+        String data;
+        try {
+            data = ApiCaller.getInstance().getDataFromJikan(url);
+            return objectMapper.map(data, request.getRequestClass());
+        } catch (CouldNotReachJikanException | CouldNotMapException e) {
+            throw new CouldNotGetObjectException(e, url);
+        }
+    }
 
 }

@@ -1,17 +1,13 @@
 package caller;
 
-import enums.AbstractRequest;
 import enums.CharactersRequests;
 import exceptions.CouldNotGetObjectException;
-import exceptions.CouldNotMapException;
-import exceptions.CouldNotReachJikanException;
 import jikan.characters.characterAnime.CharacterAnime;
 import jikan.characters.characterById.CharacterById;
 import jikan.characters.characterManga.CharacterManga;
 import jikan.characters.characterPictures.CharacterPictures;
 import jikan.characters.characterVoiceActors.CharacterVoiceActors;
 import jikan.characters.charactersSearch.CharactersSearch;
-import util.ApiCaller;
 
 public class CharacterCaller extends AbstractCaller {
 
@@ -52,18 +48,7 @@ public class CharacterCaller extends AbstractCaller {
 
     public CharactersSearch getCharactersSearch(CharactersSearchTermBuilder charactersSearchTermBuilder) throws CouldNotGetObjectException {
         return this.getObject(charactersSearchTermBuilder.buildTerm(), CharactersRequests.CharactersSearch);
-
     }
 
-    private CharactersSearch getObject(String restUrl, AbstractRequest request) throws CouldNotGetObjectException {
-        String url = JIKAN_URL + restUrl;
-        String data;
-        try {
-            data = ApiCaller.getInstance().getDataFromJikan(url);
-            return objectMapper.map(data, request.getRequestClass());
-        } catch (CouldNotReachJikanException | CouldNotMapException e) {
-            throw new CouldNotGetObjectException(e, url);
-        }
-    }
 
 }

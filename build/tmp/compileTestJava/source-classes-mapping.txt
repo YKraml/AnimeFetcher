@@ -1,8 +1,10 @@
-caller/AnimeCallerTest.java
- caller.AnimeCallerTest
+caller/CharactersSearchTermBuilderTest.java
+ caller.CharactersSearchTermBuilderTest
 caller/TopCallerTest.java
  caller.TopCallerTest
 caller/CharacterCallerTest.java
  caller.CharacterCallerTest
-caller/CharactersSearchTermBuilderTest.java
- caller.CharactersSearchTermBuilderTest
+caller/AnimeSearchTermBuilderTest.java
+ caller.AnimeSearchTermBuilderTest
+caller/AnimeCallerTest.java
+ caller.AnimeCallerTest

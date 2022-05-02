@@ -1,5 +1,6 @@
 package caller;
 
+import enums.SearchQuerySort;
 import exceptions.CouldNotGetObjectException;
 import jikan.anime.animeById.AnimeById;
 import jikan.anime.animeCharacters.AnimeCharacters;
@@ -13,6 +14,7 @@ import jikan.anime.animePictures.AnimePictures;
 import jikan.anime.animeRecommendations.AnimeRecommendations;
 import jikan.anime.animeRelations.AnimeRelations;
 import jikan.anime.animeReviews.AnimeReviews;
+import jikan.anime.animeSearch.AnimeSearch;
 import jikan.anime.animeStaff.AnimeStaff;
 import jikan.anime.animeStatistics.AnimeStatistics;
 import jikan.anime.animeThemes.AnimeThemes;
@@ -52,6 +54,23 @@ class AnimeCallerTest {
         } catch (CouldNotGetObjectException e) {
             e.printStackTrace();
         }
+
+    }
+
+    @Test
+    public void testSearch(){
+
+        AnimeSearchTermBuilder builder = new AnimeSearchTermBuilder();
+
+        builder.setMinScore(8).setMaxScore(9).setSearchQuerySort(SearchQuerySort.desc).setAnimeSearchQueryOrderBy(AnimeSearchQueryOrderBy.favorites);
+
+        try {
+            AnimeSearch animeSearch = AnimeCaller.getInstance().getAnimeSearch(builder);
+            System.out.println(animeSearch.getData());
+        } catch (CouldNotGetObjectException e) {
+            throw new RuntimeException(e);
+        }
+
 
     }
 
