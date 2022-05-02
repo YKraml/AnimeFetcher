@@ -41,8 +41,6 @@ public class ApiCaller {
             }
         }
 
-        System.out.println(System.currentTimeMillis());
-
         String content = "";
 
         OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(TIMEOUT_WAIT, TimeUnit.SECONDS).build();
