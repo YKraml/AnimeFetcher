@@ -1,20 +1,14 @@
 
 package jikan.top.TopReviews;
 
+import com.fasterxml.jackson.annotation.*;
+
+import javax.annotation.Generated;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.Generated;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "user",
-    "anime",
     "mal_id",
     "url",
     "type",
@@ -22,15 +16,13 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "date",
     "review",
     "episodes_watched",
-    "scores"
+    "scores",
+    "entry",
+    "user"
 })
 @Generated("jsonschema2pojo")
 public class Datum {
 
-    @JsonProperty("user")
-    private User user;
-    @JsonProperty("anime")
-    private Anime anime;
     @JsonProperty("mal_id")
     private Integer malId;
     @JsonProperty("url")
@@ -47,28 +39,12 @@ public class Datum {
     private Integer episodesWatched;
     @JsonProperty("scores")
     private Scores scores;
+    @JsonProperty("entry")
+    private Entry entry;
+    @JsonProperty("user")
+    private User user;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    @JsonProperty("user")
-    public User getUser() {
-        return user;
-    }
-
-    @JsonProperty("user")
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    @JsonProperty("anime")
-    public Anime getAnime() {
-        return anime;
-    }
-
-    @JsonProperty("anime")
-    public void setAnime(Anime anime) {
-        this.anime = anime;
-    }
 
     @JsonProperty("mal_id")
     public Integer getMalId() {
@@ -148,6 +124,26 @@ public class Datum {
     @JsonProperty("scores")
     public void setScores(Scores scores) {
         this.scores = scores;
+    }
+
+    @JsonProperty("entry")
+    public Entry getEntry() {
+        return entry;
+    }
+
+    @JsonProperty("entry")
+    public void setEntry(Entry entry) {
+        this.entry = entry;
+    }
+
+    @JsonProperty("user")
+    public User getUser() {
+        return user;
+    }
+
+    @JsonProperty("user")
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @JsonAnyGetter

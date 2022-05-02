@@ -27,30 +27,30 @@ public class TopCaller extends AbstractCaller {
         return instance;
     }
 
-    public TopAnime getTopAnime() throws CouldNotGetObjectException {
-        return getObject(TopRequests.TopAnime);
+    public TopAnime getTopAnime(int page) throws CouldNotGetObjectException {
+        return getObject(TopRequests.TopAnime, page);
     }
 
-    public TopManga getTopManga() throws CouldNotGetObjectException {
-        return getObject(TopRequests.TopManga);
-    }
-
-
-    public TopPeople getTopPeople() throws CouldNotGetObjectException {
-        return getObject(TopRequests.TopPeople);
+    public TopManga getTopManga(int page) throws CouldNotGetObjectException {
+        return getObject(TopRequests.TopManga, page);
     }
 
 
-    public TopCharacters getTopCharacters() throws CouldNotGetObjectException {
-        return getObject(TopRequests.TopCharacters);
+    public TopPeople getTopPeople(int page) throws CouldNotGetObjectException {
+        return getObject(TopRequests.TopPeople, page);
     }
 
-    public TopReviews getTopReviews() throws CouldNotGetObjectException {
-        return getObject(TopRequests.TopReviews);
+
+    public TopCharacters getTopCharacters(int page) throws CouldNotGetObjectException {
+        return getObject(TopRequests.TopCharacters, page);
     }
 
-    private <K> K getObject(TopRequests request) throws CouldNotGetObjectException {
-        String url = JIKAN_URL + name + "/" + request.getRequestString();
+    public TopReviews getTopReviews(int page) throws CouldNotGetObjectException {
+        return getObject(TopRequests.TopReviews, page);
+    }
+
+    private <K> K getObject(TopRequests request, int page) throws CouldNotGetObjectException {
+        String url = JIKAN_URL + name + "/" + request.getRequestString() + "/?page=" + page;
         String data;
         try {
             data = ApiCaller.getInstance().getDataFromJikan(url);

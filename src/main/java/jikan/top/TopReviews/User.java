@@ -13,31 +13,21 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
-    "username",
     "url",
+    "username",
     "images"
 })
 @Generated("jsonschema2pojo")
 public class User {
 
-    @JsonProperty("username")
-    private String username;
     @JsonProperty("url")
     private String url;
+    @JsonProperty("username")
+    private String username;
     @JsonProperty("images")
-    private Images images;
+    private Images__1 images;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
-
-    @JsonProperty("username")
-    public String getUsername() {
-        return username;
-    }
-
-    @JsonProperty("username")
-    public void setUsername(String username) {
-        this.username = username;
-    }
 
     @JsonProperty("url")
     public String getUrl() {
@@ -49,13 +39,23 @@ public class User {
         this.url = url;
     }
 
+    @JsonProperty("username")
+    public String getUsername() {
+        return username;
+    }
+
+    @JsonProperty("username")
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
     @JsonProperty("images")
-    public Images getImages() {
+    public Images__1 getImages() {
         return images;
     }
 
     @JsonProperty("images")
-    public void setImages(Images images) {
+    public void setImages(Images__1 images) {
         this.images = images;
     }
 
