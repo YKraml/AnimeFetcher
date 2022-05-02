@@ -78,8 +78,8 @@ jikan/top/TopAnime/ExplicitGenre.java
  jikan.top.TopAnime.ExplicitGenre
 jikan/anime/animeRecommendations/Entry.java
  jikan.anime.animeRecommendations.Entry
-util/ApiCaller.java
- util.ApiCaller
+jikan/top/TopReviews/TopReviews.java
+ jikan.top.TopReviews.TopReviews
 jikan/top/TopAnime/Items.java
  jikan.top.TopAnime.Items
 caller/AnimeCaller.java
@@ -198,8 +198,8 @@ jikan/anime/animeStatistics/AnimeStatistics.java
  jikan.anime.animeStatistics.AnimeStatistics
 jikan/characters/characterVoiceActors/Person.java
  jikan.characters.characterVoiceActors.Person
-caller/AbstractCaller.java
- caller.AbstractCaller
+jikan/top/TopReviews/Webp.java
+ jikan.top.TopReviews.Webp
 jikan/anime/animeUserUpdates/Datum.java
  jikan.anime.animeUserUpdates.Datum
 jikan/characters/characterAnime/Anime.java
@@ -350,8 +350,8 @@ jikan/anime/animeReviews/Datum.java
  jikan.anime.animeReviews.Datum
 jikan/characters/characterVoiceActors/Images.java
  jikan.characters.characterVoiceActors.Images
-caller/CharacterCaller.java
- caller.CharacterCaller
+jikan/top/TopReviews/Images.java
+ jikan.top.TopReviews.Images
 jikan/anime/animeCharacters/Person.java
  jikan.anime.animeCharacters.Person
 jikan/top/TopCharacters/TopCharacters.java
@@ -436,11 +436,19 @@ jikan/top/TopReviews/Images__1.java
  jikan.top.TopReviews.Images__1
 jikan/top/TopReviews/Webp__1.java
  jikan.top.TopReviews.Webp__1
-jikan/top/TopReviews/TopReviews.java
- jikan.top.TopReviews.TopReviews
-jikan/top/TopReviews/Images.java
- jikan.top.TopReviews.Images
-jikan/top/TopReviews/Webp.java
- jikan.top.TopReviews.Webp
 caller/TopCaller.java
  caller.TopCaller
+enums/CharactersSearchQueryOrderBy.java
+ enums.CharactersSearchQueryOrderBy
+util/ApiCaller.java
+ util.ApiCaller
+enums/SearchQuerySort.java
+ enums.SearchQuerySort
+caller/AbstractCaller.java
+ caller.AbstractCaller
+caller/CharactersSearchTermBuilder.java
+ caller.CharactersSearchTermBuilder
+caller/CharacterCaller.java
+ caller.CharacterCaller
+caller/Jikan.java
+ caller.Jikan

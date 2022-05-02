@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="caller.TopCallerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-02T14:36:19" hostname="KRAMLSCOMPUTER" time="0.769">
-  <properties/>
-  <testcase name="testAll()" classname="caller.TopCallerTest" time="0.769"/>
-  <system-out><![CDATA[1651502179961
-Test Ende
-]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

@@ -6,6 +6,7 @@ import jikan.characters.characterById.CharacterById;
 import jikan.characters.characterManga.CharacterManga;
 import jikan.characters.characterPictures.CharacterPictures;
 import jikan.characters.characterVoiceActors.CharacterVoiceActors;
+import jikan.characters.charactersSearch.CharactersSearch;
 import org.junit.jupiter.api.Test;
 
 class CharacterCallerTest {
@@ -31,6 +32,21 @@ class CharacterCallerTest {
         }
 
 
+    }
+
+    @Test
+    public void testSearch(){
+
+        CharactersSearchTermBuilder builder = new CharactersSearchTermBuilder();
+
+        String s = builder.buildTerm();
+
+        try {
+            CharactersSearch charactersSearch = CharacterCaller.getInstance().getCharactersSearch(builder);
+            System.out.println(charactersSearch.getData());
+        } catch (CouldNotGetObjectException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }
