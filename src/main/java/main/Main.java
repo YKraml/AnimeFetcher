@@ -5,6 +5,10 @@
  */
 package main;
 
+import caller.Jikan;
+import exceptions.CouldNotGetObjectException;
+import jikan.anime.animeById.AnimeById;
+
 /**
  * @author yanni
  */
@@ -15,6 +19,24 @@ public class Main {
      */
     public static void main(String[] args) {
 
+
+        for (int i = 1; i < 100; i++) {
+
+
+
+            try {
+                AnimeById animeById = Jikan.getAnimeCaller().getAnimeById(i);
+                System.out.println(animeById.getAdditionalProperties());
+                if(animeById.getAdditionalProperties().containsValue("limited")){
+                    System.out.println(i + " war null");
+                    break;
+                }
+
+            } catch (CouldNotGetObjectException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
 
 
     }
