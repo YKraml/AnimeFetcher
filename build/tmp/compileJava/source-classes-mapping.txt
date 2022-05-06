@@ -38,12 +38,12 @@ exceptions/CouldNotReachJikanException.java
  exceptions.CouldNotReachJikanException
 jikan/anime/animePictures/AnimePictures.java
  jikan.anime.animePictures.AnimePictures
-caller/TopCaller.java
- caller.TopCaller
+caller/AnimeSearchTermBuilder.java
+ caller.AnimeSearchTermBuilder
 jikan/top/TopAnime/From.java
  jikan.top.TopAnime.From
-main/Main.java
- main.Main
+caller/Jikan.java
+ caller.Jikan
 jikan/anime/animeSearch/To.java
  jikan.anime.animeSearch.To
 jikan/anime/animeUserUpdates/Pagination.java
@@ -80,8 +80,8 @@ jikan/top/TopAnime/ExplicitGenre.java
  jikan.top.TopAnime.ExplicitGenre
 jikan/anime/animeRecommendations/Entry.java
  jikan.anime.animeRecommendations.Entry
-util/ApiCaller.java
- util.ApiCaller
+jikan/anime/animeReviews/User.java
+ jikan.anime.animeReviews.User
 jikan/top/TopAnime/Items.java
  jikan.top.TopAnime.Items
 jikan/anime/animeById/Data.java
@@ -200,8 +200,8 @@ jikan/anime/animeStatistics/AnimeStatistics.java
  jikan.anime.animeStatistics.AnimeStatistics
 jikan/characters/characterVoiceActors/Person.java
  jikan.characters.characterVoiceActors.Person
-caller/AbstractCaller.java
- caller.AbstractCaller
+caller/AnimeCaller.java
+ caller.AnimeCaller
 jikan/anime/animeUserUpdates/Datum.java
  jikan.anime.animeUserUpdates.Datum
 jikan/characters/characterAnime/Anime.java
@@ -454,11 +454,11 @@ jikan/characters/charactersSearch/Pagination.java
  jikan.characters.charactersSearch.Pagination
 jikan/top/TopAnime/Images.java
  jikan.top.TopAnime.Images
-jikan/anime/animeReviews/User.java
- jikan.anime.animeReviews.User
-caller/AnimeSearchTermBuilder.java
- caller.AnimeSearchTermBuilder
-caller/AnimeCaller.java
- caller.AnimeCaller
-caller/Jikan.java
- caller.Jikan
+main/Main.java
+ main.Main
+util/ApiCaller.java
+ util.ApiCaller
+caller/AbstractCaller.java
+ caller.AbstractCaller
+caller/TopCaller.java
+ caller.TopCaller

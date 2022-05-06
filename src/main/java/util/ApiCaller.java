@@ -50,7 +50,6 @@ public class ApiCaller {
         long currentTime = System.currentTimeMillis();
         long timeDelta = currentTime - lastFetchTime;
         long newWaitTime = WAIT_TIME - timeDelta;
-        System.out.println(newWaitTime);
         if (newWaitTime > 0) {
             try {
                 TimeUnit.MILLISECONDS.sleep(newWaitTime);
