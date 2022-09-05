@@ -1,6 +1,6 @@
 package caller;
 
-import enums.AbstractRequest;
+import request.AbstractRequest;
 import exceptions.CouldNotGetObjectException;
 import exceptions.CouldNotMapException;
 import exceptions.CouldNotReachJikanException;
@@ -19,7 +19,7 @@ public abstract class AbstractCaller {
 
     protected final MyObjectMapper objectMapper;
 
-    String name;
+    protected String name;
 
     protected AbstractCaller(String name) {
         this.objectMapper = new MyObjectMapper();

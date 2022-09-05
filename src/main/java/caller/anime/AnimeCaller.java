@@ -1,7 +1,8 @@
-package caller;
+package caller.anime;
 
 
-import enums.AnimeRequests;
+import caller.AbstractCaller;
+import request.anime.AnimeRequests;
 import exceptions.CouldNotGetObjectException;
 import jikan.anime.animeById.AnimeById;
 import jikan.anime.animeCharacters.AnimeCharacters;

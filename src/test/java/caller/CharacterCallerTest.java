@@ -1,5 +1,7 @@
 package caller;
 
+import caller.character.CharacterCaller;
+import caller.character.CharactersSearchTermBuilder;
 import exceptions.CouldNotGetObjectException;
 import jikan.characters.characterAnime.CharacterAnime;
 import jikan.characters.characterById.CharacterById;

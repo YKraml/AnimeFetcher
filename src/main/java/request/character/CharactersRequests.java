@@ -1,5 +1,6 @@
-package enums;
+package request.character;
 
+import request.AbstractRequest;
 import jikan.characters.characterById.CharacterById;
 
 public class CharactersRequests extends AbstractRequest {
@@ -12,7 +13,7 @@ public class CharactersRequests extends AbstractRequest {
     public final static CharactersRequests CharactersSearch = new CharactersRequests("", jikan.characters.charactersSearch.CharactersSearch.class);
 
 
-    CharactersRequests(String requestString, Class<?> requestClass) {
+    private CharactersRequests(String requestString, Class<?> requestClass) {
         super(requestString, requestClass);
     }
 }

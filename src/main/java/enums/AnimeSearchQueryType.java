@@ -1,4 +1,4 @@
-package caller;
+package enums;
 
 public enum AnimeSearchQueryType {
 

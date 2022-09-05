@@ -1,6 +1,9 @@
 package caller;
 
-import enums.SearchQuerySort;
+import caller.anime.AnimeCaller;
+import enums.AnimeSearchQueryOrderBy;
+import caller.anime.AnimeSearchTermBuilder;
+import request.SearchQuerySort;
 import exceptions.CouldNotGetObjectException;
 import jikan.anime.animeById.AnimeById;
 import jikan.anime.animeCharacters.AnimeCharacters;

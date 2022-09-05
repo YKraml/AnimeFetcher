@@ -1,7 +1,7 @@
-package caller;
+package caller.character;
 
-import enums.CharactersSearchQueryOrderBy;
-import enums.SearchQuerySort;
+import request.character.CharactersSearchQueryOrderBy;
+import request.SearchQuerySort;
 
 import java.util.HashMap;
 import java.util.Map;

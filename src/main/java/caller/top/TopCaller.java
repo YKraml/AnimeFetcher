@@ -1,6 +1,7 @@
-package caller;
+package caller.top;
 
-import enums.TopRequests;
+import caller.AbstractCaller;
+import request.top.TopRequests;
 import exceptions.CouldNotGetObjectException;
 import exceptions.CouldNotMapException;
 import exceptions.CouldNotReachJikanException;

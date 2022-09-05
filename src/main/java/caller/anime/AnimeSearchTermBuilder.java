@@ -1,6 +1,10 @@
-package caller;
+package caller.anime;
 
-import enums.SearchQuerySort;
+import enums.AnimeSearchQueryOrderBy;
+import enums.AnimeSearchQueryRating;
+import enums.AnimeSearchQueryStatus;
+import enums.AnimeSearchQueryType;
+import request.SearchQuerySort;
 
 import java.util.HashMap;
 import java.util.Map;

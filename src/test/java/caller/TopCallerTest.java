@@ -1,5 +1,6 @@
 package caller;
 
+import caller.top.TopCaller;
 import exceptions.CouldNotGetObjectException;
 import jikan.top.TopAnime.TopAnime;
 import jikan.top.TopCharacters.TopCharacters;

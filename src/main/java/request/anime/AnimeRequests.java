@@ -1,5 +1,7 @@
-package enums;
+package request.anime;
 
+
+import request.AbstractRequest;
 
 public class AnimeRequests extends AbstractRequest {
 
@@ -40,7 +42,7 @@ public class AnimeRequests extends AbstractRequest {
     public final static AnimeRequests AnimeSearch = new AnimeRequests("", jikan.anime.animeSearch.AnimeSearch.class);
 
 
-    AnimeRequests(String requestString, Class<?> requestClass) {
+    private AnimeRequests(String requestString, Class<?> requestClass) {
         super(requestString, requestClass);
     }
 }

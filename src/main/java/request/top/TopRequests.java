@@ -1,5 +1,6 @@
-package enums;
+package request.top;
 
+import request.AbstractRequest;
 import jikan.top.TopAnime.TopAnime;
 
 public class TopRequests extends AbstractRequest {
@@ -10,7 +11,7 @@ public class TopRequests extends AbstractRequest {
     public final static TopRequests TopCharacters = new TopRequests("characters", jikan.top.TopCharacters.TopCharacters.class);
     public final static TopRequests TopReviews = new TopRequests("reviews", jikan.top.TopReviews.TopReviews.class);
 
-    TopRequests(String requestString, Class<?> requestClass) {
+    private TopRequests(String requestString, Class<?> requestClass) {
         super(requestString, requestClass);
     }
 }

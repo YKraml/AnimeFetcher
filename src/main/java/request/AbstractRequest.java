@@ -1,11 +1,11 @@
-package enums;
+package request;
 
 public class AbstractRequest {
 
     private final String requestString;
     private final Class<?> requestClass;
 
-    AbstractRequest(String requestString, Class<?> requestClass) {
+    protected AbstractRequest(String requestString, Class<?> requestClass) {
         this.requestString = requestString;
         this.requestClass = requestClass;
     }

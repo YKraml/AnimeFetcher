@@ -1,6 +1,7 @@
-package caller;
+package caller.character;
 
-import enums.CharactersRequests;
+import caller.AbstractCaller;
+import request.character.CharactersRequests;
 import exceptions.CouldNotGetObjectException;
 import jikan.characters.characterAnime.CharacterAnime;
 import jikan.characters.characterById.CharacterById;
