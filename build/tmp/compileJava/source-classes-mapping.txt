@@ -1,466 +1,468 @@
-jikan/anime/animeSearch/Prop.java
- jikan.anime.animeSearch.Prop
-jikan/anime/animeForum/Datum.java
- jikan.anime.animeForum.Datum
-jikan/characters/characterVoiceActors/Datum.java
- jikan.characters.characterVoiceActors.Datum
-jikan/top/TopManga/Webp.java
- jikan.top.TopManga.Webp
+model/jikan/anime/animeCharacters/Webp.java
+ model.jikan.anime.animeCharacters.Webp
+model/jikan/top/TopReviews/Entry.java
+ model.jikan.top.TopReviews.Entry
 enums/AnimeSearchQueryOrderBy.java
  enums.AnimeSearchQueryOrderBy
+model/jikan/anime/animeStaff/Datum.java
+ model.jikan.anime.animeStaff.Datum
 caller/character/CharacterCaller.java
  caller.character.CharacterCaller
-jikan/anime/animeUserUpdates/User.java
- jikan.anime.animeUserUpdates.User
-jikan/characters/characterManga/Jpg.java
- jikan.characters.characterManga.Jpg
-jikan/top/TopManga/Author.java
- jikan.top.TopManga.Author
-jikan/anime/animeExternal/AnimeExternal.java
- jikan.anime.animeExternal.AnimeExternal
-jikan/top/TopAnime/Prop.java
- jikan.top.TopAnime.Prop
-jikan/top/TopManga/To.java
- jikan.top.TopManga.To
+model/jikan/anime/animeUserUpdates/AnimeUserUpdates.java
+ model.jikan.anime.animeUserUpdates.AnimeUserUpdates
+model/jikan/top/TopAnime/ExplicitGenre.java
+ model.jikan.top.TopAnime.ExplicitGenre
+model/jikan/anime/animeById/Studio.java
+ model.jikan.anime.animeById.Studio
+model/jikan/top/TopAnime/Images.java
+ model.jikan.top.TopAnime.Images
+model/jikan/anime/animeEpisodeById/Data.java
+ model.jikan.anime.animeEpisodeById.Data
+model/jikan/anime/animeById/Images.java
+ model.jikan.anime.animeById.Images
+model/jikan/top/TopPeople/Items.java
+ model.jikan.top.TopPeople.Items
 util/url/HostSetter.java
  util.url.HostSetter
-jikan/top/TopAnime/Aired.java
- jikan.top.TopAnime.Aired
-jikan/anime/animeStatistics/Score.java
- jikan.anime.animeStatistics.Score
-jikan/anime/animeSearch/From.java
- jikan.anime.animeSearch.From
-jikan/anime/animeUserUpdates/AnimeUserUpdates.java
- jikan.anime.animeUserUpdates.AnimeUserUpdates
-jikan/anime/animeSearch/Items.java
- jikan.anime.animeSearch.Items
+model/jikan/anime/animeEpisodes/AnimeEpisodes.java
+ model.jikan.anime.animeEpisodes.AnimeEpisodes
+model/jikan/anime/animeReviews/User.java
+ model.jikan.anime.animeReviews.User
 util/url/ParameterAdder.java
  util.url.ParameterAdder
-jikan/top/TopAnime/Theme.java
- jikan.top.TopAnime.Theme
-jikan/anime/animeCharacters/Datum.java
- jikan.anime.animeCharacters.Datum
-jikan/anime/animeReviews/Pagination.java
- jikan.anime.animeReviews.Pagination
+model/jikan/anime/animeSearch/Jpg.java
+ model.jikan.anime.animeSearch.Jpg
+model/jikan/characters/charactersSearch/Webp.java
+ model.jikan.characters.charactersSearch.Webp
+model/jikan/anime/animeStatistics/Data.java
+ model.jikan.anime.animeStatistics.Data
+model/jikan/top/TopReviews/Images.java
+ model.jikan.top.TopReviews.Images
+model/jikan/anime/animeMoreInfo/AnimeMoreInfo.java
+ model.jikan.anime.animeMoreInfo.AnimeMoreInfo
+model/jikan/anime/animeRecommendations/Datum.java
+ model.jikan.anime.animeRecommendations.Datum
 exceptions/CouldNotReachJikanException.java
  exceptions.CouldNotReachJikanException
-jikan/anime/animePictures/AnimePictures.java
- jikan.anime.animePictures.AnimePictures
+model/jikan/characters/charactersSearch/Datum.java
+ model.jikan.characters.charactersSearch.Datum
+model/jikan/top/TopPeople/Datum.java
+ model.jikan.top.TopPeople.Datum
 caller/top/TopCaller.java
  caller.top.TopCaller
-jikan/top/TopAnime/From.java
- jikan.top.TopAnime.From
-jikan/anime/animeById/Data.java
- jikan.anime.animeById.Data
-jikan/anime/animeSearch/To.java
- jikan.anime.animeSearch.To
-jikan/anime/animeUserUpdates/Pagination.java
- jikan.anime.animeUserUpdates.Pagination
-jikan/anime/animeRecommendations/Images.java
- jikan.anime.animeRecommendations.Images
-jikan/anime/animeVideos/Images__1.java
- jikan.anime.animeVideos.Images__1
-jikan/top/TopCharacters/Datum.java
- jikan.top.TopCharacters.Datum
-jikan/top/TopCharacters/Jpg.java
- jikan.top.TopCharacters.Jpg
-jikan/top/TopReviews/Jpg.java
- jikan.top.TopReviews.Jpg
-jikan/anime/animeNews/AnimeNews.java
- jikan.anime.animeNews.AnimeNews
-jikan/anime/animeById/ExplicitGenre.java
- jikan.anime.animeById.ExplicitGenre
-jikan/anime/animePictures/Jpg.java
- jikan.anime.animePictures.Jpg
-jikan/top/TopManga/From.java
- jikan.top.TopManga.From
-jikan/characters/characterById/Images.java
- jikan.characters.characterById.Images
-jikan/anime/animeNews/Datum.java
- jikan.anime.animeNews.Datum
-jikan/top/TopReviews/Webp__1.java
- jikan.top.TopReviews.Webp__1
-jikan/anime/animeReviews/AnimeReviews.java
- jikan.anime.animeReviews.AnimeReviews
-jikan/top/TopAnime/ExplicitGenre.java
- jikan.top.TopAnime.ExplicitGenre
-jikan/anime/animeRecommendations/Entry.java
- jikan.anime.animeRecommendations.Entry
+main/Main.java
+ main.Main
+model/jikan/top/TopManga/Jpg.java
+ model.jikan.top.TopManga.Jpg
+model/jikan/anime/animeSearch/Broadcast.java
+ model.jikan.anime.animeSearch.Broadcast
+model/jikan/anime/animeVideos/Promo.java
+ model.jikan.anime.animeVideos.Promo
+model/jikan/anime/animeUserUpdates/Images.java
+ model.jikan.anime.animeUserUpdates.Images
+model/jikan/characters/characterVoiceActors/CharacterVoiceActors.java
+ model.jikan.characters.characterVoiceActors.CharacterVoiceActors
+model/jikan/top/TopCharacters/Images.java
+ model.jikan.top.TopCharacters.Images
+caller/anime/AnimeCaller.java
+ caller.anime.AnimeCaller
+model/jikan/top/TopCharacters/Jpg.java
+ model.jikan.top.TopCharacters.Jpg
+model/jikan/top/TopManga/Items.java
+ model.jikan.top.TopManga.Items
+model/jikan/top/TopAnime/Datum.java
+ model.jikan.top.TopAnime.Datum
+model/jikan/anime/animeById/Jpg.java
+ model.jikan.anime.animeById.Jpg
+model/jikan/anime/animeStatistics/AnimeStatistics.java
+ model.jikan.anime.animeStatistics.AnimeStatistics
+model/jikan/anime/animeUserUpdates/Webp.java
+ model.jikan.anime.animeUserUpdates.Webp
+model/jikan/top/TopPeople/Jpg.java
+ model.jikan.top.TopPeople.Jpg
+model/jikan/anime/animeCharacters/Character.java
+ model.jikan.anime.animeCharacters.Character
+model/jikan/top/TopAnime/Items.java
+ model.jikan.top.TopAnime.Items
+model/jikan/top/TopManga/Datum.java
+ model.jikan.top.TopManga.Datum
+model/jikan/top/TopAnime/Pagination.java
+ model.jikan.top.TopAnime.Pagination
+model/jikan/characters/characterVoiceActors/Datum.java
+ model.jikan.characters.characterVoiceActors.Datum
+model/jikan/anime/animeNews/Images.java
+ model.jikan.anime.animeNews.Images
+model/jikan/anime/animeById/Webp.java
+ model.jikan.anime.animeById.Webp
+model/jikan/anime/animePictures/Datum.java
+ model.jikan.anime.animePictures.Datum
 util/ApiCaller.java
  util.ApiCaller
-jikan/top/TopAnime/Items.java
- jikan.top.TopAnime.Items
-jikan/anime/animeById/Trailer.java
- jikan.anime.animeById.Trailer
-jikan/top/TopManga/Published.java
- jikan.top.TopManga.Published
-jikan/top/TopAnime/Trailer.java
- jikan.top.TopAnime.Trailer
-jikan/anime/animeCharacters/Images.java
- jikan.anime.animeCharacters.Images
-jikan/anime/animeCharacters/Images__1.java
- jikan.anime.animeCharacters.Images__1
-jikan/anime/animeSearch/Theme.java
- jikan.anime.animeSearch.Theme
-jikan/anime/animeStatistics/Data.java
- jikan.anime.animeStatistics.Data
-jikan/anime/animeCharacters/Jpg__1.java
- jikan.anime.animeCharacters.Jpg__1
-jikan/top/TopPeople/Images.java
- jikan.top.TopPeople.Images
-jikan/characters/charactersSearch/Images.java
- jikan.characters.charactersSearch.Images
-jikan/anime/animeStaff/AnimeStaff.java
- jikan.anime.animeStaff.AnimeStaff
-jikan/top/TopManga/Genre.java
- jikan.top.TopManga.Genre
-jikan/top/TopManga/Serialization.java
- jikan.top.TopManga.Serialization
-jikan/anime/animeStaff/Images.java
- jikan.anime.animeStaff.Images
-jikan/anime/animeById/To.java
- jikan.anime.animeById.To
+model/jikan/anime/animeSearch/Prop.java
+ model.jikan.anime.animeSearch.Prop
+model/jikan/anime/animeSearch/Items.java
+ model.jikan.anime.animeSearch.Items
+model/jikan/characters/characterManga/Datum.java
+ model.jikan.characters.characterManga.Datum
+model/jikan/top/TopReviews/Jpg.java
+ model.jikan.top.TopReviews.Jpg
+model/jikan/anime/animeForum/Datum.java
+ model.jikan.anime.animeForum.Datum
+model/jikan/characters/characterVoiceActors/Jpg.java
+ model.jikan.characters.characterVoiceActors.Jpg
+model/jikan/characters/characterById/Webp.java
+ model.jikan.characters.characterById.Webp
+model/jikan/top/TopPeople/Pagination.java
+ model.jikan.top.TopPeople.Pagination
+model/jikan/characters/charactersSearch/Items.java
+ model.jikan.characters.charactersSearch.Items
+model/jikan/characters/characterAnime/CharacterAnime.java
+ model.jikan.characters.characterAnime.CharacterAnime
+model/jikan/anime/animeReviews/Scores.java
+ model.jikan.anime.animeReviews.Scores
+model/jikan/anime/animePictures/Webp.java
+ model.jikan.anime.animePictures.Webp
+model/jikan/anime/animeStaff/Jpg.java
+ model.jikan.anime.animeStaff.Jpg
+model/jikan/anime/animeById/Broadcast.java
+ model.jikan.anime.animeById.Broadcast
+model/jikan/top/TopAnime/Webp.java
+ model.jikan.top.TopAnime.Webp
+model/jikan/characters/characterManga/Manga.java
+ model.jikan.characters.characterManga.Manga
 util/url/UrlBuilder.java
  util.url.UrlBuilder
-jikan/top/TopAnime/Genre.java
- jikan.top.TopAnime.Genre
-jikan/anime/animeById/Producer.java
- jikan.anime.animeById.Producer
+model/jikan/anime/animeVideos/AnimeVideos.java
+ model.jikan.anime.animeVideos.AnimeVideos
 caller/character/CharactersSearchTermBuilder.java
  caller.character.CharactersSearchTermBuilder
 enums/AnimeSearchQueryType.java
  enums.AnimeSearchQueryType
-jikan/anime/animeRecommendations/Datum.java
- jikan.anime.animeRecommendations.Datum
-jikan/anime/animeForum/LastComment.java
- jikan.anime.animeForum.LastComment
-jikan/anime/animeById/Studio.java
- jikan.anime.animeById.Studio
-jikan/top/TopAnime/Datum.java
- jikan.top.TopAnime.Datum
+model/jikan/anime/animeEpisodeById/AnimeEpisodeById.java
+ model.jikan.anime.animeEpisodeById.AnimeEpisodeById
 util/MyObjectMapper.java
  util.MyObjectMapper
-jikan/anime/animeReviews/Images.java
- jikan.anime.animeReviews.Images
-jikan/anime/animeThemes/AnimeThemes.java
- jikan.anime.animeThemes.AnimeThemes
-jikan/anime/animeById/Aired.java
- jikan.anime.animeById.Aired
-jikan/top/TopManga/Images.java
- jikan.top.TopManga.Images
-jikan/anime/animeMoreInfo/Data.java
- jikan.anime.animeMoreInfo.Data
-jikan/anime/animeRelations/Datum.java
- jikan.anime.animeRelations.Datum
-jikan/anime/animeNews/Jpg.java
- jikan.anime.animeNews.Jpg
-jikan/anime/animeUserUpdates/Jpg.java
- jikan.anime.animeUserUpdates.Jpg
-jikan/anime/animeCharacters/Character.java
- jikan.anime.animeCharacters.Character
-jikan/characters/characterById/Data.java
- jikan.characters.characterById.Data
-jikan/top/TopPeople/Jpg.java
- jikan.top.TopPeople.Jpg
-jikan/anime/animeRelations/Entry.java
- jikan.anime.animeRelations.Entry
+model/jikan/top/TopReviews/Images__1.java
+ model.jikan.top.TopReviews.Images__1
+model/jikan/top/TopManga/Genre.java
+ model.jikan.top.TopManga.Genre
+model/jikan/anime/animeById/Prop.java
+ model.jikan.anime.animeById.Prop
+model/jikan/anime/animeById/Theme.java
+ model.jikan.anime.animeById.Theme
+model/jikan/anime/animeVideos/Data.java
+ model.jikan.anime.animeVideos.Data
+model/jikan/anime/animeRelations/AnimeRelations.java
+ model.jikan.anime.animeRelations.AnimeRelations
+model/jikan/anime/animeNews/Datum.java
+ model.jikan.anime.animeNews.Datum
+model/jikan/characters/charactersSearch/CharactersSearch.java
+ model.jikan.characters.charactersSearch.CharactersSearch
+model/jikan/anime/animePictures/Images.java
+ model.jikan.anime.animePictures.Images
 enums/Type.java
  enums.Type
-jikan/top/TopAnime/Jpg.java
- jikan.top.TopAnime.Jpg
-jikan/anime/animeVideos/Jpg.java
- jikan.anime.animeVideos.Jpg
-jikan/top/TopAnime/Demographic.java
- jikan.top.TopAnime.Demographic
-jikan/anime/animeSearch/Trailer.java
- jikan.anime.animeSearch.Trailer
-jikan/characters/characterAnime/Webp.java
- jikan.characters.characterAnime.Webp
-jikan/anime/animeReviews/Webp.java
- jikan.anime.animeReviews.Webp
-jikan/characters/characterPictures/Datum.java
- jikan.characters.characterPictures.Datum
-jikan/characters/characterAnime/Datum.java
- jikan.characters.characterAnime.Datum
-jikan/anime/animeSearch/Aired.java
- jikan.anime.animeSearch.Aired
-jikan/anime/animeCharacters/Jpg.java
- jikan.anime.animeCharacters.Jpg
-jikan/top/TopReviews/Jpg__1.java
- jikan.top.TopReviews.Jpg__1
+model/jikan/top/TopReviews/TopReviews.java
+ model.jikan.top.TopReviews.TopReviews
+model/jikan/anime/animeVideos/Images.java
+ model.jikan.anime.animeVideos.Images
+model/jikan/anime/animeSearch/From.java
+ model.jikan.anime.animeSearch.From
+model/jikan/anime/animeForum/AnimeForum.java
+ model.jikan.anime.animeForum.AnimeForum
+model/jikan/top/TopReviews/Datum.java
+ model.jikan.top.TopReviews.Datum
+model/jikan/anime/animeReviews/Images.java
+ model.jikan.anime.animeReviews.Images
+model/jikan/anime/animeVideos/Jpg.java
+ model.jikan.anime.animeVideos.Jpg
+model/jikan/anime/animePictures/Jpg.java
+ model.jikan.anime.animePictures.Jpg
+model/jikan/anime/animeCharacters/AnimeCharacters.java
+ model.jikan.anime.animeCharacters.AnimeCharacters
+model/jikan/anime/animeEpisodes/Pagination.java
+ model.jikan.anime.animeEpisodes.Pagination
+model/jikan/top/TopCharacters/Datum.java
+ model.jikan.top.TopCharacters.Datum
+model/jikan/anime/animeStaff/Person.java
+ model.jikan.anime.animeStaff.Person
+model/jikan/characters/characterAnime/Webp.java
+ model.jikan.characters.characterAnime.Webp
+model/jikan/top/TopAnime/Theme.java
+ model.jikan.top.TopAnime.Theme
+model/jikan/anime/animeSearch/Pagination.java
+ model.jikan.anime.animeSearch.Pagination
+model/jikan/anime/animeSearch/Aired.java
+ model.jikan.anime.animeSearch.Aired
+model/jikan/characters/charactersSearch/Images.java
+ model.jikan.characters.charactersSearch.Images
+model/jikan/anime/animeById/To.java
+ model.jikan.anime.animeById.To
+model/jikan/anime/animeThemes/Data.java
+ model.jikan.anime.animeThemes.Data
+model/jikan/anime/animeCharacters/Jpg__1.java
+ model.jikan.anime.animeCharacters.Jpg__1
+model/jikan/top/TopReviews/Jpg__1.java
+ model.jikan.top.TopReviews.Jpg__1
 enums/AnimeSearchQueryStatus.java
  enums.AnimeSearchQueryStatus
-jikan/top/TopAnime/Pagination.java
- jikan.top.TopAnime.Pagination
-jikan/anime/animeReviews/Scores.java
- jikan.anime.animeReviews.Scores
-jikan/anime/animeVideos/Trailer.java
- jikan.anime.animeVideos.Trailer
-jikan/anime/animeSearch/Broadcast.java
- jikan.anime.animeSearch.Broadcast
-jikan/anime/animeCharacters/Webp.java
- jikan.anime.animeCharacters.Webp
-jikan/anime/animeForum/AnimeForum.java
- jikan.anime.animeForum.AnimeForum
-jikan/anime/animeStatistics/AnimeStatistics.java
- jikan.anime.animeStatistics.AnimeStatistics
-jikan/characters/characterVoiceActors/Person.java
- jikan.characters.characterVoiceActors.Person
+model/jikan/characters/characterManga/Images.java
+ model.jikan.characters.characterManga.Images
+model/jikan/anime/animeReviews/Datum.java
+ model.jikan.anime.animeReviews.Datum
+model/jikan/anime/animeReviews/Jpg.java
+ model.jikan.anime.animeReviews.Jpg
+model/jikan/top/TopManga/Demographic.java
+ model.jikan.top.TopManga.Demographic
+model/jikan/characters/charactersSearch/Jpg.java
+ model.jikan.characters.charactersSearch.Jpg
+model/jikan/anime/animeSearch/ExplicitGenre.java
+ model.jikan.anime.animeSearch.ExplicitGenre
 caller/AbstractCaller.java
  caller.AbstractCaller
-jikan/anime/animeUserUpdates/Datum.java
- jikan.anime.animeUserUpdates.Datum
-jikan/characters/characterAnime/Anime.java
- jikan.characters.characterAnime.Anime
-jikan/anime/animeRecommendations/Webp.java
- jikan.anime.animeRecommendations.Webp
-jikan/anime/animeVideos/Promo.java
- jikan.anime.animeVideos.Promo
-jikan/top/TopManga/Prop.java
- jikan.top.TopManga.Prop
-jikan/top/TopCharacters/Images.java
- jikan.top.TopCharacters.Images
-jikan/anime/animeNews/Images.java
- jikan.anime.animeNews.Images
-jikan/anime/animeById/Genre.java
- jikan.anime.animeById.Genre
-jikan/anime/animeCharacters/VoiceActor.java
- jikan.anime.animeCharacters.VoiceActor
-jikan/characters/characterManga/Manga.java
- jikan.characters.characterManga.Manga
-jikan/characters/characterVoiceActors/CharacterVoiceActors.java
- jikan.characters.characterVoiceActors.CharacterVoiceActors
-jikan/top/TopManga/Datum.java
- jikan.top.TopManga.Datum
-jikan/anime/animeById/AnimeById.java
- jikan.anime.animeById.AnimeById
-jikan/characters/characterAnime/Jpg.java
- jikan.characters.characterAnime.Jpg
-jikan/characters/charactersSearch/Items.java
- jikan.characters.charactersSearch.Items
-jikan/characters/charactersSearch/Jpg.java
- jikan.characters.charactersSearch.Jpg
-jikan/characters/characterVoiceActors/Jpg.java
- jikan.characters.characterVoiceActors.Jpg
-jikan/anime/animeRelations/AnimeRelations.java
- jikan.anime.animeRelations.AnimeRelations
-jikan/top/TopAnime/Studio.java
- jikan.top.TopAnime.Studio
-jikan/top/TopPeople/Pagination.java
- jikan.top.TopPeople.Pagination
-jikan/anime/animeById/Webp.java
- jikan.anime.animeById.Webp
-jikan/anime/animePictures/Webp.java
- jikan.anime.animePictures.Webp
-jikan/anime/animeRecommendations/AnimeRecommendations.java
- jikan.anime.animeRecommendations.AnimeRecommendations
-jikan/anime/animeById/Licensor.java
- jikan.anime.animeById.Licensor
-jikan/top/TopPeople/Items.java
- jikan.top.TopPeople.Items
-jikan/top/TopReviews/TopReviews.java
- jikan.top.TopReviews.TopReviews
-jikan/anime/animeReviews/User.java
- jikan.anime.animeReviews.User
-jikan/characters/characterManga/Webp.java
- jikan.characters.characterManga.Webp
-jikan/top/TopReviews/Webp.java
- jikan.top.TopReviews.Webp
-jikan/anime/animeSearch/Licensor.java
- jikan.anime.animeSearch.Licensor
-enums/Filter.java
- enums.Filter
-jikan/top/TopReviews/Pagination.java
- jikan.top.TopReviews.Pagination
-jikan/anime/animeEpisodes/Datum.java
- jikan.anime.animeEpisodes.Datum
-jikan/anime/animeVideos/Episode.java
- jikan.anime.animeVideos.Episode
-jikan/anime/animeEpisodes/Pagination.java
- jikan.anime.animeEpisodes.Pagination
-jikan/anime/animeReviews/Jpg.java
- jikan.anime.animeReviews.Jpg
-exceptions/MyException.java
- exceptions.MyException
-jikan/characters/characterById/Jpg.java
- jikan.characters.characterById.Jpg
-jikan/characters/characterById/CharacterById.java
- jikan.characters.characterById.CharacterById
-jikan/anime/animeSearch/Pagination.java
- jikan.anime.animeSearch.Pagination
-caller/anime/AnimeSearchTermBuilder.java
- caller.anime.AnimeSearchTermBuilder
-jikan/anime/animeThemes/Data.java
- jikan.anime.animeThemes.Data
-jikan/anime/animeStaff/Person.java
- jikan.anime.animeStaff.Person
-jikan/anime/animeMoreInfo/AnimeMoreInfo.java
- jikan.anime.animeMoreInfo.AnimeMoreInfo
-jikan/top/TopReviews/Entry.java
- jikan.top.TopReviews.Entry
-jikan/anime/animeVideos/Data.java
- jikan.anime.animeVideos.Data
-util/url/SubfolderAdder.java
- util.url.SubfolderAdder
-jikan/top/TopAnime/TopAnime.java
- jikan.top.TopAnime.TopAnime
-jikan/anime/animeUserUpdates/Webp.java
- jikan.anime.animeUserUpdates.Webp
-enums/AnimeSearchQueryRating.java
- enums.AnimeSearchQueryRating
-jikan/anime/animeExternal/Datum.java
- jikan.anime.animeExternal.Datum
-jikan/characters/characterAnime/Images.java
- jikan.characters.characterAnime.Images
-jikan/anime/animeById/From.java
- jikan.anime.animeById.From
-jikan/anime/animeById/Theme.java
- jikan.anime.animeById.Theme
-jikan/characters/charactersSearch/Datum.java
- jikan.characters.charactersSearch.Datum
-jikan/anime/animeEpisodeById/Data.java
- jikan.anime.animeEpisodeById.Data
-jikan/top/TopManga/ExplicitGenre.java
- jikan.top.TopManga.ExplicitGenre
-jikan/anime/animeEpisodes/AnimeEpisodes.java
- jikan.anime.animeEpisodes.AnimeEpisodes
-jikan/anime/animeById/Jpg.java
- jikan.anime.animeById.Jpg
-jikan/top/TopAnime/Licensor.java
- jikan.top.TopAnime.Licensor
-jikan/top/TopManga/Items.java
- jikan.top.TopManga.Items
-jikan/anime/animeSearch/Images.java
- jikan.anime.animeSearch.Images
-jikan/characters/characterManga/Images.java
- jikan.characters.characterManga.Images
-jikan/top/TopReviews/Images__1.java
- jikan.top.TopReviews.Images__1
-jikan/top/TopPeople/Datum.java
- jikan.top.TopPeople.Datum
-jikan/characters/characterAnime/CharacterAnime.java
- jikan.characters.characterAnime.CharacterAnime
-jikan/characters/characterById/Webp.java
- jikan.characters.characterById.Webp
-jikan/characters/charactersSearch/Webp.java
- jikan.characters.charactersSearch.Webp
-jikan/anime/animePictures/Datum.java
- jikan.anime.animePictures.Datum
-jikan/anime/animePictures/Images.java
- jikan.anime.animePictures.Images
-jikan/top/TopReviews/Datum.java
- jikan.top.TopReviews.Datum
-jikan/anime/animeById/Prop.java
- jikan.anime.animeById.Prop
-jikan/anime/animeSearch/Webp.java
- jikan.anime.animeSearch.Webp
-exceptions/CouldNotMapException.java
- exceptions.CouldNotMapException
-jikan/anime/animeEpisodeById/AnimeEpisodeById.java
- jikan.anime.animeEpisodeById.AnimeEpisodeById
-enums/SearchQuerySort.java
- enums.SearchQuerySort
-jikan/top/TopManga/Theme.java
- jikan.top.TopManga.Theme
-jikan/top/TopReviews/User.java
- jikan.top.TopReviews.User
-jikan/anime/animeReviews/Datum.java
- jikan.anime.animeReviews.Datum
-jikan/characters/characterVoiceActors/Images.java
- jikan.characters.characterVoiceActors.Images
-jikan/anime/animeCharacters/Person.java
- jikan.anime.animeCharacters.Person
-jikan/top/TopCharacters/TopCharacters.java
- jikan.top.TopCharacters.TopCharacters
-jikan/characters/characterManga/Datum.java
- jikan.characters.characterManga.Datum
-enums/CharactersSearchQueryOrderBy.java
- enums.CharactersSearchQueryOrderBy
-jikan/top/TopAnime/Broadcast.java
- jikan.top.TopAnime.Broadcast
-jikan/characters/characterManga/CharacterManga.java
- jikan.characters.characterManga.CharacterManga
-jikan/characters/characterPictures/CharacterPictures.java
- jikan.characters.characterPictures.CharacterPictures
-jikan/top/TopCharacters/Webp.java
- jikan.top.TopCharacters.Webp
-jikan/anime/animeSearch/ExplicitGenre.java
- jikan.anime.animeSearch.ExplicitGenre
-jikan/top/TopManga/Jpg.java
- jikan.top.TopManga.Jpg
-jikan/top/TopManga/TopManga.java
- jikan.top.TopManga.TopManga
-jikan/top/TopReviews/Scores.java
- jikan.top.TopReviews.Scores
-jikan/anime/animeCharacters/AnimeCharacters.java
- jikan.anime.animeCharacters.AnimeCharacters
-jikan/top/TopManga/Pagination.java
- jikan.top.TopManga.Pagination
-jikan/anime/animeById/Broadcast.java
- jikan.anime.animeById.Broadcast
-jikan/anime/animeUserUpdates/Images.java
- jikan.anime.animeUserUpdates.Images
-jikan/anime/animeById/Images.java
- jikan.anime.animeById.Images
-jikan/top/TopAnime/Producer.java
- jikan.top.TopAnime.Producer
-jikan/anime/animeStaff/Datum.java
- jikan.anime.animeStaff.Datum
-jikan/characters/characterPictures/Jpg.java
- jikan.characters.characterPictures.Jpg
-jikan/top/TopPeople/TopPeople.java
- jikan.top.TopPeople.TopPeople
-jikan/top/TopManga/Demographic.java
- jikan.top.TopManga.Demographic
-exceptions/CouldNotGetObjectException.java
- exceptions.CouldNotGetObjectException
-jikan/anime/animeSearch/Studio.java
- jikan.anime.animeSearch.Studio
-jikan/anime/animeSearch/Demographic.java
- jikan.anime.animeSearch.Demographic
-jikan/characters/charactersSearch/CharactersSearch.java
- jikan.characters.charactersSearch.CharactersSearch
-jikan/anime/animeVideos/AnimeVideos.java
- jikan.anime.animeVideos.AnimeVideos
-jikan/anime/animeRecommendations/Jpg.java
- jikan.anime.animeRecommendations.Jpg
-jikan/anime/animeVideos/Images.java
- jikan.anime.animeVideos.Images
-jikan/top/TopCharacters/Pagination.java
- jikan.top.TopCharacters.Pagination
-jikan/anime/animeSearch/Genre.java
- jikan.anime.animeSearch.Genre
-jikan/anime/animeById/Demographic.java
- jikan.anime.animeById.Demographic
-jikan/anime/animeSearch/Datum.java
- jikan.anime.animeSearch.Datum
-jikan/top/TopReviews/Images.java
- jikan.top.TopReviews.Images
-jikan/anime/animeNews/Pagination.java
- jikan.anime.animeNews.Pagination
-jikan/anime/animeSearch/Producer.java
- jikan.anime.animeSearch.Producer
-jikan/anime/animeStaff/Jpg.java
- jikan.anime.animeStaff.Jpg
-jikan/anime/animeSearch/Jpg.java
- jikan.anime.animeSearch.Jpg
-jikan/anime/animeSearch/AnimeSearch.java
- jikan.anime.animeSearch.AnimeSearch
-jikan/top/TopAnime/To.java
- jikan.top.TopAnime.To
-jikan/top/TopAnime/Webp.java
- jikan.top.TopAnime.Webp
-jikan/top/TopCharacters/Items.java
- jikan.top.TopCharacters.Items
-jikan/characters/charactersSearch/Pagination.java
- jikan.characters.charactersSearch.Pagination
-jikan/top/TopAnime/Images.java
- jikan.top.TopAnime.Images
-caller/anime/AnimeCaller.java
- caller.anime.AnimeCaller
-main/Main.java
- main.Main
-caller/anime/AnimeCallerTest.java
- caller.anime.AnimeCallerTest
+model/jikan/anime/animeSearch/AnimeSearch.java
+ model.jikan.anime.animeSearch.AnimeSearch
+model/jikan/characters/characterManga/Webp.java
+ model.jikan.characters.characterManga.Webp
+model/jikan/anime/animeCharacters/VoiceActor.java
+ model.jikan.anime.animeCharacters.VoiceActor
+model/jikan/anime/animeCharacters/Person.java
+ model.jikan.anime.animeCharacters.Person
+model/jikan/top/TopManga/Images.java
+ model.jikan.top.TopManga.Images
+model/jikan/top/TopReviews/Webp.java
+ model.jikan.top.TopReviews.Webp
+model/jikan/top/TopAnime/Studio.java
+ model.jikan.top.TopAnime.Studio
+model/jikan/anime/animeById/Producer.java
+ model.jikan.anime.animeById.Producer
+model/jikan/anime/animeStatistics/Score.java
+ model.jikan.anime.animeStatistics.Score
+model/jikan/anime/animeStaff/AnimeStaff.java
+ model.jikan.anime.animeStaff.AnimeStaff
+model/jikan/top/TopAnime/Broadcast.java
+ model.jikan.top.TopAnime.Broadcast
+model/jikan/anime/animeEpisodes/Datum.java
+ model.jikan.anime.animeEpisodes.Datum
+model/jikan/anime/animeExternal/AnimeExternal.java
+ model.jikan.anime.animeExternal.AnimeExternal
+model/jikan/anime/animeSearch/Studio.java
+ model.jikan.anime.animeSearch.Studio
+model/jikan/anime/animeStaff/Images.java
+ model.jikan.anime.animeStaff.Images
+model/jikan/anime/animeExternal/Datum.java
+ model.jikan.anime.animeExternal.Datum
+model/jikan/anime/animeById/Data.java
+ model.jikan.anime.animeById.Data
+model/jikan/anime/animeUserUpdates/User.java
+ model.jikan.anime.animeUserUpdates.User
+model/jikan/anime/animeSearch/Producer.java
+ model.jikan.anime.animeSearch.Producer
+model/jikan/anime/animeById/Genre.java
+ model.jikan.anime.animeById.Genre
+model/jikan/anime/animeSearch/Images.java
+ model.jikan.anime.animeSearch.Images
+model/jikan/top/TopCharacters/TopCharacters.java
+ model.jikan.top.TopCharacters.TopCharacters
+model/jikan/anime/animePictures/AnimePictures.java
+ model.jikan.anime.animePictures.AnimePictures
+model/jikan/top/TopAnime/Licensor.java
+ model.jikan.top.TopAnime.Licensor
+model/jikan/top/TopManga/From.java
+ model.jikan.top.TopManga.From
+model/jikan/characters/characterPictures/CharacterPictures.java
+ model.jikan.characters.characterPictures.CharacterPictures
+model/jikan/top/TopManga/Author.java
+ model.jikan.top.TopManga.Author
+model/jikan/characters/characterById/Images.java
+ model.jikan.characters.characterById.Images
+model/jikan/anime/animeSearch/Demographic.java
+ model.jikan.anime.animeSearch.Demographic
+model/jikan/characters/charactersSearch/Pagination.java
+ model.jikan.characters.charactersSearch.Pagination
+model/jikan/characters/characterVoiceActors/Images.java
+ model.jikan.characters.characterVoiceActors.Images
 caller/Jikan.java
  caller.Jikan
+model/jikan/top/TopReviews/Pagination.java
+ model.jikan.top.TopReviews.Pagination
+model/jikan/anime/animeCharacters/Images__1.java
+ model.jikan.anime.animeCharacters.Images__1
+model/jikan/anime/animeById/ExplicitGenre.java
+ model.jikan.anime.animeById.ExplicitGenre
+model/jikan/characters/characterManga/CharacterManga.java
+ model.jikan.characters.characterManga.CharacterManga
+model/jikan/top/TopManga/To.java
+ model.jikan.top.TopManga.To
+model/jikan/anime/animeReviews/Webp.java
+ model.jikan.anime.animeReviews.Webp
+model/jikan/anime/animeSearch/Theme.java
+ model.jikan.anime.animeSearch.Theme
+enums/Filter.java
+ enums.Filter
+model/jikan/top/TopAnime/Jpg.java
+ model.jikan.top.TopAnime.Jpg
+model/jikan/anime/animeSearch/To.java
+ model.jikan.anime.animeSearch.To
+model/jikan/top/TopCharacters/Pagination.java
+ model.jikan.top.TopCharacters.Pagination
+model/jikan/anime/animeById/AnimeById.java
+ model.jikan.anime.animeById.AnimeById
+model/jikan/top/TopAnime/Demographic.java
+ model.jikan.top.TopAnime.Demographic
+model/jikan/characters/characterManga/Jpg.java
+ model.jikan.characters.characterManga.Jpg
+model/jikan/anime/animeSearch/Webp.java
+ model.jikan.anime.animeSearch.Webp
+exceptions/MyException.java
+ exceptions.MyException
+model/jikan/top/TopManga/ExplicitGenre.java
+ model.jikan.top.TopManga.ExplicitGenre
+model/jikan/anime/animeUserUpdates/Pagination.java
+ model.jikan.anime.animeUserUpdates.Pagination
+model/jikan/top/TopManga/Prop.java
+ model.jikan.top.TopManga.Prop
+model/jikan/top/TopCharacters/Items.java
+ model.jikan.top.TopCharacters.Items
+model/jikan/anime/animeVideos/Trailer.java
+ model.jikan.anime.animeVideos.Trailer
+caller/anime/AnimeSearchTermBuilder.java
+ caller.anime.AnimeSearchTermBuilder
+model/jikan/top/TopAnime/Trailer.java
+ model.jikan.top.TopAnime.Trailer
+model/jikan/anime/animeSearch/Genre.java
+ model.jikan.anime.animeSearch.Genre
+model/jikan/anime/animeReviews/Pagination.java
+ model.jikan.anime.animeReviews.Pagination
+model/jikan/top/TopAnime/Prop.java
+ model.jikan.top.TopAnime.Prop
+model/jikan/anime/animeRecommendations/Images.java
+ model.jikan.anime.animeRecommendations.Images
+model/jikan/top/TopReviews/Scores.java
+ model.jikan.top.TopReviews.Scores
+model/jikan/anime/animeUserUpdates/Datum.java
+ model.jikan.anime.animeUserUpdates.Datum
+util/url/SubfolderAdder.java
+ util.url.SubfolderAdder
+model/jikan/anime/animeRelations/Datum.java
+ model.jikan.anime.animeRelations.Datum
+model/jikan/characters/characterAnime/Datum.java
+ model.jikan.characters.characterAnime.Datum
+model/jikan/characters/characterPictures/Datum.java
+ model.jikan.characters.characterPictures.Datum
+model/jikan/top/TopAnime/From.java
+ model.jikan.top.TopAnime.From
+enums/AnimeSearchQueryRating.java
+ enums.AnimeSearchQueryRating
+model/jikan/anime/animeCharacters/Datum.java
+ model.jikan.anime.animeCharacters.Datum
+model/jikan/anime/animeNews/Pagination.java
+ model.jikan.anime.animeNews.Pagination
+model/jikan/anime/animeNews/Jpg.java
+ model.jikan.anime.animeNews.Jpg
+model/jikan/top/TopPeople/TopPeople.java
+ model.jikan.top.TopPeople.TopPeople
+model/jikan/anime/animeSearch/Trailer.java
+ model.jikan.anime.animeSearch.Trailer
+model/jikan/characters/characterVoiceActors/Person.java
+ model.jikan.characters.characterVoiceActors.Person
+model/jikan/top/TopAnime/Genre.java
+ model.jikan.top.TopAnime.Genre
+model/jikan/top/TopManga/Webp.java
+ model.jikan.top.TopManga.Webp
+model/jikan/top/TopPeople/Images.java
+ model.jikan.top.TopPeople.Images
+model/jikan/characters/characterPictures/Jpg.java
+ model.jikan.characters.characterPictures.Jpg
+model/jikan/anime/animeById/Aired.java
+ model.jikan.anime.animeById.Aired
+model/jikan/anime/animeCharacters/Jpg.java
+ model.jikan.anime.animeCharacters.Jpg
+model/jikan/anime/animeById/From.java
+ model.jikan.anime.animeById.From
+caller/anime/AnimeCallerTest.java
+ caller.anime.AnimeCallerTest
+model/jikan/anime/animeUserUpdates/Jpg.java
+ model.jikan.anime.animeUserUpdates.Jpg
+exceptions/CouldNotMapException.java
+ exceptions.CouldNotMapException
+model/jikan/top/TopAnime/Producer.java
+ model.jikan.top.TopAnime.Producer
+enums/SearchQuerySort.java
+ enums.SearchQuerySort
+model/jikan/top/TopManga/TopManga.java
+ model.jikan.top.TopManga.TopManga
+enums/CharactersSearchQueryOrderBy.java
+ enums.CharactersSearchQueryOrderBy
+model/jikan/characters/characterById/Data.java
+ model.jikan.characters.characterById.Data
+model/jikan/top/TopManga/Serialization.java
+ model.jikan.top.TopManga.Serialization
+model/jikan/characters/characterAnime/Anime.java
+ model.jikan.characters.characterAnime.Anime
+exceptions/CouldNotParseUrlException.java
+ exceptions.CouldNotParseUrlException
+model/jikan/anime/animeCharacters/Images.java
+ model.jikan.anime.animeCharacters.Images
+model/jikan/anime/animeById/Trailer.java
+ model.jikan.anime.animeById.Trailer
+model/jikan/anime/animeRecommendations/Entry.java
+ model.jikan.anime.animeRecommendations.Entry
+model/jikan/anime/animeVideos/Images__1.java
+ model.jikan.anime.animeVideos.Images__1
+model/jikan/characters/characterAnime/Images.java
+ model.jikan.characters.characterAnime.Images
+exceptions/CouldNotGetObjectException.java
+ exceptions.CouldNotGetObjectException
+model/jikan/anime/animeRecommendations/AnimeRecommendations.java
+ model.jikan.anime.animeRecommendations.AnimeRecommendations
+model/jikan/anime/animeRecommendations/Jpg.java
+ model.jikan.anime.animeRecommendations.Jpg
+model/jikan/top/TopAnime/Aired.java
+ model.jikan.top.TopAnime.Aired
+model/jikan/top/TopAnime/To.java
+ model.jikan.top.TopAnime.To
+model/jikan/anime/animeById/Demographic.java
+ model.jikan.anime.animeById.Demographic
+model/jikan/top/TopAnime/TopAnime.java
+ model.jikan.top.TopAnime.TopAnime
+model/jikan/anime/animeRecommendations/Webp.java
+ model.jikan.anime.animeRecommendations.Webp
+model/jikan/characters/characterById/CharacterById.java
+ model.jikan.characters.characterById.CharacterById
+model/jikan/anime/animeThemes/AnimeThemes.java
+ model.jikan.anime.animeThemes.AnimeThemes
+model/jikan/anime/animeSearch/Datum.java
+ model.jikan.anime.animeSearch.Datum
+model/jikan/anime/animeReviews/AnimeReviews.java
+ model.jikan.anime.animeReviews.AnimeReviews
+model/jikan/characters/characterAnime/Jpg.java
+ model.jikan.characters.characterAnime.Jpg
+model/jikan/anime/animeById/Licensor.java
+ model.jikan.anime.animeById.Licensor
+model/jikan/top/TopCharacters/Webp.java
+ model.jikan.top.TopCharacters.Webp
+model/jikan/anime/animeVideos/Episode.java
+ model.jikan.anime.animeVideos.Episode
+model/jikan/top/TopReviews/Webp__1.java
+ model.jikan.top.TopReviews.Webp__1
+model/jikan/anime/animeForum/LastComment.java
+ model.jikan.anime.animeForum.LastComment
+model/jikan/anime/animeMoreInfo/Data.java
+ model.jikan.anime.animeMoreInfo.Data
+model/jikan/anime/animeNews/AnimeNews.java
+ model.jikan.anime.animeNews.AnimeNews
+model/jikan/top/TopManga/Pagination.java
+ model.jikan.top.TopManga.Pagination
+model/jikan/anime/animeRelations/Entry.java
+ model.jikan.anime.animeRelations.Entry
+model/jikan/top/TopReviews/User.java
+ model.jikan.top.TopReviews.User
+model/jikan/characters/characterById/Jpg.java
+ model.jikan.characters.characterById.Jpg
+model/jikan/anime/animeSearch/Licensor.java
+ model.jikan.anime.animeSearch.Licensor
+model/jikan/top/TopManga/Theme.java
+ model.jikan.top.TopManga.Theme
+model/jikan/top/TopManga/Published.java
+ model.jikan.top.TopManga.Published

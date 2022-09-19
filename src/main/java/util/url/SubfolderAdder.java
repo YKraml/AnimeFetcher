@@ -1,5 +1,7 @@
 package util.url;
 
+import exceptions.CouldNotParseUrlException;
+
 import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -28,14 +30,24 @@ public class SubfolderAdder {
         return new ParameterAdder(urlBuilder);
     }
 
-    public String getURL() throws URISyntaxException, MalformedURLException {
-        URI uri = new URI(
-                urlBuilder.connType,
-                urlBuilder.host,
-                urlBuilder.folders.toString(),
-                urlBuilder.params.toString(),
-                null);
-        return uri.toURL().toString();
+    public String getURL() throws CouldNotParseUrlException {
+        try {
+            URI uri = new URI(
+                    urlBuilder.connType,
+                    urlBuilder.host,
+                    urlBuilder.folders.toString(),
+                    urlBuilder.params.toString(),
+                    null);
+            return uri.toURL().toString();
+        } catch (MalformedURLException | URISyntaxException e) {
+            throw new CouldNotParseUrlException(
+                    e,
+                    urlBuilder.connType,
+                    urlBuilder.host,
+                    urlBuilder.folders.toString(),
+                    urlBuilder.params.toString());
+        }
+
     }
 
 }

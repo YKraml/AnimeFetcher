@@ -1,7 +1,6 @@
 package caller;
 
-import exceptions.CouldNotGetObjectException;
-import exceptions.MyException;
+import exceptions.*;
 import util.ApiCaller;
 import util.MyObjectMapper;
 import util.url.SubfolderAdder;
@@ -47,15 +46,16 @@ public abstract class AbstractCaller {
 
             System.out.println(url);
 
-        } catch (URISyntaxException | MalformedURLException e) {
-            throw new CouldNotGetObjectException(e, "Es gab ein problem beim erstellen der Url");
+        } catch (CouldNotParseUrlException e) {
+            throw new CouldNotGetObjectException(e, pathParameters, queryParameters, clazz);
         }
+
 
         try {
             String json = ApiCaller.getInstance().getDataFromJikan(url);
             return objectMapper.map(json, clazz);
-        } catch (MyException e) {
-            throw new CouldNotGetObjectException(e, url);
+        } catch (CouldNotMapException | CouldNotReachJikanException e) {
+            throw new CouldNotGetObjectException(e, pathParameters, queryParameters, clazz);
         }
     }
 

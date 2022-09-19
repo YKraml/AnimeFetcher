@@ -1,17 +1,14 @@
 package caller.anime;
 
-import caller.Jikan;
 import exceptions.CouldNotGetObjectException;
-import jikan.anime.animeById.AnimeById;
-import jikan.anime.animeCharacters.AnimeCharacters;
-import jikan.anime.animeCharacters.Datum;
-import jikan.anime.animeEpisodeById.AnimeEpisodeById;
-import jikan.anime.animeEpisodes.AnimeEpisodes;
-import jikan.anime.animeStaff.AnimeStaff;
+import model.jikan.anime.animeById.AnimeById;
+import model.jikan.anime.animeCharacters.AnimeCharacters;
+import model.jikan.anime.animeCharacters.Datum;
+import model.jikan.anime.animeEpisodeById.AnimeEpisodeById;
+import model.jikan.anime.animeEpisodes.AnimeEpisodes;
+import model.jikan.anime.animeStaff.AnimeStaff;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class AnimeCallerTest {
 
@@ -37,7 +34,7 @@ class AnimeCallerTest {
     @Test
     void getAnimeStaff() throws CouldNotGetObjectException {
         AnimeStaff animeStaff = animeCaller.getAnimeStaff("1");
-        jikan.anime.animeStaff.Datum person = animeStaff.getData().iterator().next();
+        model.jikan.anime.animeStaff.Datum person = animeStaff.getData().iterator().next();
         Assertions.assertEquals(40009, person.getPerson().getMalId());
         Assertions.assertEquals("Maseba, Yutaka", person.getPerson().getName());
         Assertions.assertEquals("Producer", person.getPositions().iterator().next());
@@ -46,7 +43,7 @@ class AnimeCallerTest {
     @Test
     void getAnimeEpisodes() throws CouldNotGetObjectException {
         AnimeEpisodes episodes = animeCaller.getAnimeEpisodes("1", "1");
-        jikan.anime.animeEpisodes.Datum episode = episodes.getData().iterator().next();
+        model.jikan.anime.animeEpisodes.Datum episode = episodes.getData().iterator().next();
         Assertions.assertEquals(1, episode.getMalId());
         Assertions.assertEquals("Asteroid Blues", episode.getTitle());
         Assertions.assertEquals(false, episode.getFiller());

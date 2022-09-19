@@ -7,7 +7,7 @@ package main;
 
 import caller.anime.AnimeCaller;
 import exceptions.CouldNotGetObjectException;
-import jikan.anime.animeById.AnimeById;
+import model.jikan.anime.animeById.AnimeById;
 
 /**
  * @author yanni
@@ -20,7 +20,8 @@ public class Main {
     public static void main(String[] args) throws CouldNotGetObjectException {
 
 
-        AnimeById animeById = AnimeCaller.getInstance().getAnimeById("1");
+        AnimeById animeById = AnimeCaller.getInstance().getAnimeById("2134324");
+
 
         System.out.println(animeById.getData().getTitleEnglish());
 

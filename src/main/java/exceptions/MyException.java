@@ -1,38 +1,36 @@
 package exceptions;
 
-public abstract class MyException extends Exception{
+import java.util.Arrays;
+
+public abstract class MyException extends Exception {
 
     protected final Exception innerException;
 
-    public MyException(Exception innerException){
+    public MyException(Exception innerException) {
         this.innerException = innerException;
     }
 
-    public Exception getInnerException() {
-        return innerException;
-    }
-
     @Override
-    public String getMessage(){
-
-        StringBuilder longMessage = new StringBuilder();
-
-        Exception exception = this;
-        while (exception instanceof MyException){
-            longMessage.append(((MyException)exception).getPrivateMessage()).append("\n");
-            exception = ((MyException) exception).innerException;
-        }
-
-        longMessage.append(exception.getMessage()).append("\n");
-
-        return longMessage.toString();
+    public String getMessage() {
+        return getPrivateMessage() + "\n" + innerException.getMessage();
     }
 
     protected abstract String getPrivateMessage();
 
     @Override
     public void printStackTrace() {
-        //innerException.printStackTrace();
         super.printStackTrace();
+        innerException.printStackTrace();
     }
+
+    @Override
+    public StackTraceElement[] getStackTrace() {
+        StackTraceElement[] stackTrace = super.getStackTrace();
+        StackTraceElement[] innerStackTrace = innerException.getStackTrace();
+
+        StackTraceElement[] result = Arrays.copyOf(stackTrace, stackTrace.length + innerStackTrace.length);
+        System.arraycopy(innerStackTrace, 0, result, stackTrace.length, innerStackTrace.length);
+        return result;
+    }
+
 }

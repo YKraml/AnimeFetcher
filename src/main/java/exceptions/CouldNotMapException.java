@@ -7,14 +7,16 @@ public class CouldNotMapException extends MyException {
     private final String data;
     private final Class<?> t;
 
-    public <T> CouldNotMapException(JsonProcessingException originalException, String data, Class<T> t) {
-        super(originalException);
+    public <T> CouldNotMapException(Exception innerException, String data, Class<T> t) {
+        super(innerException);
         this.data = data;
         this.t = t;
     }
 
     @Override
     protected String getPrivateMessage() {
-        return super.innerException.getMessage();
+        return "Could not map data to class with " +
+                "class = '" + t.getSimpleName() + "', " +
+                "data = '" + data + "'";
     }
 }
