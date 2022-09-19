@@ -38,10 +38,8 @@ public class ApiCaller {
             urlString = urlString.substring(0, urlString.length() - 1);
         }
 
-
-        try {
-            Request request = new Request.Builder().url(urlString).build();
-            Response response = new OkHttpClient().newCall(request).execute();
+        Request request = new Request.Builder().url(urlString).build();
+        try (Response response = new OkHttpClient().newCall(request).execute()) {
             return response.body().string();
         } catch (IOException ex) {
             if (retries > 0) {

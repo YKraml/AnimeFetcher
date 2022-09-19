@@ -2,7 +2,6 @@ package caller.anime;
 
 
 import caller.AbstractCaller;
-import request.anime.AnimeRequests;
 import exceptions.CouldNotGetObjectException;
 import jikan.anime.animeById.AnimeById;
 import jikan.anime.animeCharacters.AnimeCharacters;
@@ -23,14 +22,16 @@ import jikan.anime.animeThemes.AnimeThemes;
 import jikan.anime.animeUserUpdates.AnimeUserUpdates;
 import jikan.anime.animeVideos.AnimeVideos;
 
+import java.util.List;
+import java.util.Map;
+
+
 public class AnimeCaller extends AbstractCaller {
-
-
 
 
     private static AnimeCaller instance;
 
-    public AnimeCaller(){
+    public AnimeCaller() {
         super("anime");
     }
 
@@ -43,83 +44,80 @@ public class AnimeCaller extends AbstractCaller {
     }
 
 
-
-
-    public AnimeById getAnimeById(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeById);
+    public AnimeById getAnimeById(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeById.class);
     }
 
-    public AnimeCharacters getAnimeCharacters(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeCharacters);
+    public AnimeCharacters getAnimeCharacters(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id, "characters"), Map.of(), AnimeCharacters.class);
     }
 
-    public AnimeStaff getAnimeStaff(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeStaff);
+    public AnimeStaff getAnimeStaff(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id, "staff"), Map.of(), AnimeStaff.class);
     }
 
-    public AnimeEpisodes getAnimeEpisodes(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeEpisodes);
-    }
-
-
-    public AnimeEpisodeById getAnimeEpisodeById(int id, int episode) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeEpisodeById, String.valueOf(episode));
+    public AnimeEpisodes getAnimeEpisodes(String id, String page) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id, "episodes"), Map.of("page", page), AnimeEpisodes.class);
     }
 
 
-    public AnimeNews getAnimeNews(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeNews);
+    public AnimeEpisodeById getAnimeEpisodeById(String id, String episode) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id, "episodes", episode), Map.of(), AnimeEpisodeById.class);
     }
 
-    public AnimeForum getAnimeForum(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeForum);
+    // TODO: 19.09.2022 Ab hier muss noch alles gemacht und getestet werden. Also immer die Liste und Map ändern und Test schreiben.
+    public AnimeNews getAnimeNews(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeNews.class);
     }
 
-    public AnimeVideos getAnimeVideos(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeVideos);
+    public AnimeForum getAnimeForum(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeForum.class);
     }
 
-    public AnimePictures getAnimePictures(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimePictures);
+    public AnimeVideos getAnimeVideos(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeVideos.class);
     }
 
-    public AnimeStatistics getAnimeStatistics(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeStatistics);
+    public AnimePictures getAnimePictures(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimePictures.class);
     }
 
-    public AnimeMoreInfo getAnimeMoreInfo(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeMoreInfo);
+    public AnimeStatistics getAnimeStatistics(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeStatistics.class);
     }
 
-    public AnimeRecommendations getAnimeRecommendations(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeRecommendations);
+    public AnimeMoreInfo getAnimeMoreInfo(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeMoreInfo.class);
     }
 
-    public AnimeUserUpdates getAnimeUserUpdates(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeUserUpdates);
+    public AnimeRecommendations getAnimeRecommendations(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeRecommendations.class);
     }
 
-    public AnimeReviews getAnimeReviews(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeReviews);
+    public AnimeUserUpdates getAnimeUserUpdates(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeUserUpdates.class);
     }
 
-    public AnimeRelations getAnimeRelations(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeRelations);
+    public AnimeReviews getAnimeReviews(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeReviews.class);
     }
 
-    public AnimeThemes getAnimeThemes(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeThemes);
+    public AnimeRelations getAnimeRelations(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeRelations.class);
     }
 
-    public AnimeExternal getAnimeExternal(int id) throws CouldNotGetObjectException {
-        return this.getObject(id, AnimeRequests.AnimeExternal);
+    public AnimeThemes getAnimeThemes(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeThemes.class);
+    }
+
+    public AnimeExternal getAnimeExternal(String id) throws CouldNotGetObjectException {
+        return getObject(List.of("anime", id), Map.of(), AnimeExternal.class);
     }
 
 
     public AnimeSearch getAnimeSearch(AnimeSearchTermBuilder animeSearchTermBuilder) throws CouldNotGetObjectException {
-        return this.getObject(animeSearchTermBuilder.buildTerm(), AnimeRequests.AnimeSearch);
+        return this.getObject(List.of("anime"), animeSearchTermBuilder.getMap(), AnimeSearch.class);
     }
-
 
 
 }

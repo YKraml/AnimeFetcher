@@ -5,7 +5,7 @@
  */
 package main;
 
-import caller.Jikan;
+import caller.anime.AnimeCaller;
 import exceptions.CouldNotGetObjectException;
 import jikan.anime.animeById.AnimeById;
 
@@ -17,22 +17,14 @@ public class Main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CouldNotGetObjectException {
 
 
-        for (int i = 1; i < 100; i++) {
+        AnimeById animeById = AnimeCaller.getInstance().getAnimeById("1");
 
+        System.out.println(animeById.getData().getTitleEnglish());
 
-            try {
-                AnimeById animeById = Jikan.getAnimeCaller().getAnimeById(43608);
-                System.out.println(i + " | " + animeById.getData().getTitleEnglish());
-
-            } catch (CouldNotGetObjectException e) {
-                throw new RuntimeException(e);
-            }
-
-        }
-
+        //https://api.jikan.moe/v4/anime/{id}/full
 
     }
 

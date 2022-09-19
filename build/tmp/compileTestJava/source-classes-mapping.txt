@@ -2,9 +2,9 @@ caller/AnimeSearchTermBuilderTest.java
  caller.AnimeSearchTermBuilderTest
 caller/CharactersSearchTermBuilderTest.java
  caller.CharactersSearchTermBuilderTest
-caller/CharacterCallerTest.java
- caller.CharacterCallerTest
-caller/TopCallerTest.java
- caller.TopCallerTest
 caller/AnimeCallerTest.java
  caller.AnimeCallerTest
+caller/TopCallerTest.java
+ caller.TopCallerTest
+caller/CharacterCallerTest.java
+ caller.CharacterCallerTest

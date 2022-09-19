@@ -4,7 +4,7 @@ import enums.AnimeSearchQueryOrderBy;
 import enums.AnimeSearchQueryRating;
 import enums.AnimeSearchQueryStatus;
 import enums.AnimeSearchQueryType;
-import request.SearchQuerySort;
+import enums.SearchQuerySort;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -97,19 +97,7 @@ public class AnimeSearchTermBuilder {
         return this;
     }
 
-    public String buildTerm() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("anime/");
-
-
-        if (!map.isEmpty()) {
-            stringBuilder.append("?");
-            map.forEach((key, value) -> stringBuilder.append(key).append("=").append(value).append("&"));
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        }
-
-
-        return stringBuilder.toString();
+    public Map<String, String> getMap() {
+        return map;
     }
-
 }

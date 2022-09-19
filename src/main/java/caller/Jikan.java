@@ -6,15 +6,15 @@ import caller.top.TopCaller;
 
 public class Jikan {
 
-    public static AnimeCaller getAnimeCaller(){
+    public static AnimeCaller AnimeCaller() {
         return AnimeCaller.getInstance();
     }
 
-    public static CharacterCaller getCharacterCaller(){
+    public static CharacterCaller CharacterCaller() {
         return CharacterCaller.getInstance();
     }
 
-    public static TopCaller getTopCaller(){
+    public static TopCaller TopCaller() {
         return TopCaller.getInstance();
     }
 

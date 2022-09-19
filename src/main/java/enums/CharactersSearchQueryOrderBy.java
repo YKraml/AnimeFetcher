@@ -1,4 +1,4 @@
-package request.character;
+package enums;
 
 public enum CharactersSearchQueryOrderBy {
 

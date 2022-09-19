@@ -1,12 +1,16 @@
 package caller;
 
-import request.AbstractRequest;
 import exceptions.CouldNotGetObjectException;
-import exceptions.CouldNotMapException;
-import exceptions.CouldNotReachJikanException;
 import exceptions.MyException;
 import util.ApiCaller;
 import util.MyObjectMapper;
+import util.url.SubfolderAdder;
+import util.url.UrlBuilder;
+
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+import java.util.List;
+import java.util.Map;
 
 public abstract class AbstractCaller {
 
@@ -28,33 +32,32 @@ public abstract class AbstractCaller {
     }
 
 
-    protected <K> K getObject(int id, AbstractRequest request) throws CouldNotGetObjectException {
-        return getObject(id, request, "");
-    }
+    protected <K> K getObject(List<String> pathParameters, Map<String, String> queryParameters, Class<K> clazz) throws CouldNotGetObjectException {
 
-    protected <K> K getObject(int root, AbstractRequest request, String parameter) throws CouldNotGetObjectException {
-        String url = endPointUrl
-                .replace(ID_REGEX, String.valueOf(root))
-                .replace(REQUEST_REGEX, request.getRequestString())
-                .replace(PARAMETER_REGEX, String.valueOf(parameter));
+        String url;
+        try {
+            SubfolderAdder subfolderAdder = new UrlBuilder()
+                    .setConnType("https")
+                    .setHost("api.jikan.moe")
+                    .addSubfolder("v4");
+
+            pathParameters.forEach(subfolderAdder::addSubfolder);
+            queryParameters.forEach(subfolderAdder::addParameter);
+            url = subfolderAdder.getURL();
+
+            System.out.println(url);
+
+        } catch (URISyntaxException | MalformedURLException e) {
+            throw new CouldNotGetObjectException(e, "Es gab ein problem beim erstellen der Url");
+        }
 
         try {
             String json = ApiCaller.getInstance().getDataFromJikan(url);
-            return objectMapper.map(json, request.getRequestClass());
+            return objectMapper.map(json, clazz);
         } catch (MyException e) {
             throw new CouldNotGetObjectException(e, url);
         }
     }
 
-    protected <K> K getObject(String restUrl, AbstractRequest request) throws CouldNotGetObjectException {
-        String url = JIKAN_URL + restUrl;
-        String data;
-        try {
-            data = ApiCaller.getInstance().getDataFromJikan(url);
-            return objectMapper.map(data, request.getRequestClass());
-        } catch (CouldNotReachJikanException | CouldNotMapException e) {
-            throw new CouldNotGetObjectException(e, url);
-        }
-    }
 
 }

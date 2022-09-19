@@ -11,10 +11,19 @@ repositories {
 
 
 dependencies {
+
+    //Für den Aufbau der Verbindungen.
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+
+    //Für das Mappen von Json zu java Klassen
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
-    implementation 'org.junit.jupiter:junit-jupiter:5.7.0'
+
+    //Für die JSON zu Java Klassen
     implementation group: 'javax.annotation', name: 'javax.annotation-api', version: '1.2-b01'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+
+    //URL Builder
+    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
 }
 
 test {
