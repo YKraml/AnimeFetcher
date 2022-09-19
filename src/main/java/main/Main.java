@@ -23,14 +23,9 @@ public class Main {
         for (int i = 1; i < 100; i++) {
 
 
-
             try {
-                AnimeById animeById = Jikan.getAnimeCaller().getAnimeById(i);
-                System.out.println(animeById.getAdditionalProperties());
-                if(animeById.getAdditionalProperties().containsValue("limited")){
-                    System.out.println(i + " war null");
-                    break;
-                }
+                AnimeById animeById = Jikan.getAnimeCaller().getAnimeById(43608);
+                System.out.println(i + " | " + animeById.getData().getTitleEnglish());
 
             } catch (CouldNotGetObjectException e) {
                 throw new RuntimeException(e);

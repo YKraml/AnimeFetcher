@@ -11,8 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class ApiCaller {
 
     private static final int STANDARD_RETRIES = 3;
-    private static final long WAIT_TIME = 2500;
-    private static final long TIMEOUT_WAIT = 3;
+    private static final long WAIT_TIME = 1200;
     private static long lastFetchTime = System.currentTimeMillis();
     private static ApiCaller instance;
 
@@ -27,22 +26,30 @@ public class ApiCaller {
 
     }
 
-    public synchronized String getDataFromJikan(String urlString, int retries) throws CouldNotReachJikanException {
+    public String getDataFromJikan(String url) throws CouldNotReachJikanException {
+        return this.getDataFromJikan(url, STANDARD_RETRIES);
+    }
+
+    private synchronized String getDataFromJikan(String urlString, int retries) throws CouldNotReachJikanException {
 
         waitForSemaphore();
 
-        String content = "";
+        while (urlString.charAt(urlString.length() - 1) == '/') {
+            urlString = urlString.substring(0, urlString.length() - 2);
+        }
 
-        OkHttpClient client = new OkHttpClient().newBuilder().connectTimeout(TIMEOUT_WAIT, TimeUnit.SECONDS).build();
-        Request request = new Request.Builder().url(urlString).build();
+
         try {
-            Response response = client.newCall(request).execute();
-            content = response.body().string();
+            Request request = new Request.Builder().url(urlString).build();
+            Response response = new OkHttpClient().newCall(request).execute();
+            return response.body().string();
         } catch (IOException ex) {
+            if (retries > 0) {
+                return getDataFromJikan(urlString, retries - 1);
+            }
             throw new CouldNotReachJikanException(ex, urlString);
         }
 
-        return content;
     }
 
     private synchronized void waitForSemaphore() {
@@ -58,9 +65,5 @@ public class ApiCaller {
             }
         }
         lastFetchTime = System.currentTimeMillis();
-    }
-
-    public String getDataFromJikan(String url) throws CouldNotReachJikanException {
-        return this.getDataFromJikan(url, STANDARD_RETRIES);
     }
 }

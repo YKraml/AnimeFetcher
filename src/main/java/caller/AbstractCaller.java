@@ -27,28 +27,23 @@ public abstract class AbstractCaller {
         endPointUrl = JIKAN_URL + this.name + "/" + ID_REGEX + "/" + REQUEST_REGEX + "/" + PARAMETER_REGEX;
     }
 
-    protected String makeUrl(String id, String request, String parameter) {
-        return endPointUrl.replace(ID_REGEX, id).replace(REQUEST_REGEX, request).replace(PARAMETER_REGEX, parameter);
-    }
-
-
-    protected String getJson(String id, String request, String parameter) throws MyException {
-        String url = this.makeUrl(id, request, parameter);
-        return ApiCaller.getInstance().getDataFromJikan(url);
-    }
-
-    protected <K> K getObject(int root, AbstractRequest request, String parameter) throws CouldNotGetObjectException {
-        try {
-            String json = this.getJson(String.valueOf(root), request.getRequestString(), String.valueOf(parameter));
-            return objectMapper.map(json, request.getRequestClass());
-        } catch (MyException e) {
-            throw new CouldNotGetObjectException(e, this.makeUrl(String.valueOf(root), request.getRequestString(), parameter));
-        }
-    }
-
 
     protected <K> K getObject(int id, AbstractRequest request) throws CouldNotGetObjectException {
         return getObject(id, request, "");
+    }
+
+    protected <K> K getObject(int root, AbstractRequest request, String parameter) throws CouldNotGetObjectException {
+        String url = endPointUrl
+                .replace(ID_REGEX, String.valueOf(root))
+                .replace(REQUEST_REGEX, request.getRequestString())
+                .replace(PARAMETER_REGEX, String.valueOf(parameter));
+
+        try {
+            String json = ApiCaller.getInstance().getDataFromJikan(url);
+            return objectMapper.map(json, request.getRequestClass());
+        } catch (MyException e) {
+            throw new CouldNotGetObjectException(e, url);
+        }
     }
 
     protected <K> K getObject(String restUrl, AbstractRequest request) throws CouldNotGetObjectException {
