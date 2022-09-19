@@ -35,7 +35,7 @@ public class ApiCaller {
         waitForSemaphore();
 
         while (urlString.charAt(urlString.length() - 1) == '/') {
-            urlString = urlString.substring(0, urlString.length() - 2);
+            urlString = urlString.substring(0, urlString.length() - 1);
         }
 
 
