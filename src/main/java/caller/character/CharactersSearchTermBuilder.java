@@ -46,9 +46,7 @@ public class CharactersSearchTermBuilder {
         return this;
     }
 
-    public String buildTerm() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("characters/");
+    public Map<String, String> getMap() {
 
         boolean pageIsZero = page == 0;
         boolean limitIsZero = limit == 0;
@@ -78,14 +76,6 @@ public class CharactersSearchTermBuilder {
             map.put("letter", String.valueOf(letter));
         }
 
-
-        if (!map.isEmpty()) {
-            stringBuilder.append("?");
-            map.forEach((key, value) -> stringBuilder.append(key).append("=").append(value).append("&"));
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        }
-
-
-        return stringBuilder.toString();
+        return map;
     }
 }
