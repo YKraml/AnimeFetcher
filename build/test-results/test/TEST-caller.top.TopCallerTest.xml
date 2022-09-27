@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="caller.top.TopCallerTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2022-09-27T12:17:38" hostname="KRAMLSXPS15" time="6.69">
+  <properties/>
+  <testcase name="getTopPeople()" classname="caller.top.TopCallerTest" time="1.84"/>
+  <testcase name="getTopReviews()" classname="caller.top.TopCallerTest" time="0.785"/>
+  <testcase name="getTopCharacters()" classname="caller.top.TopCallerTest" time="1.355"/>
+  <testcase name="getTopAnime()" classname="caller.top.TopCallerTest" time="1.211"/>
+  <testcase name="getTopManga()" classname="caller.top.TopCallerTest" time="1.498"/>
+  <system-out><![CDATA[https://api.jikan.moe/v4/top/people?page=1
+https://api.jikan.moe/v4/top/reviews?page=1
+https://api.jikan.moe/v4/top/characters?page=1
+https://api.jikan.moe/v4/top/anime?page=1
+https://api.jikan.moe/v4/top/manga?page=1
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

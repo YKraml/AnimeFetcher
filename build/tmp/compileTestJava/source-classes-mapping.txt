@@ -2,3 +2,5 @@ caller/anime/AnimeCallerTest.java
  caller.anime.AnimeCallerTest
 caller/character/CharacterCallerTest.java
  caller.character.CharacterCallerTest
+caller/top/TopCallerTest.java
+ caller.top.TopCallerTest
