@@ -23,7 +23,7 @@ dependencies {
     implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 
     //URL Builder
-    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
+    implementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.3'
 }
 
 test {
