@@ -1,6 +1,5 @@
 package caller.top;
 
-import exceptions.CouldNotGetObjectException;
 import model.jikan.top.TopAnime.TopAnime;
 import model.jikan.top.TopCharacters.TopCharacters;
 import model.jikan.top.TopManga.TopManga;
@@ -9,40 +8,44 @@ import model.jikan.top.TopReviews.TopReviews;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.concurrent.ExecutionException;
 
 class TopCallerTest {
 
-    private final TopCaller topCaller = new TopCaller();
+    TopCaller topCaller = new TopCaller();
 
     @Test
-    void getTopAnime() throws CouldNotGetObjectException {
-        TopAnime topAnime = topCaller.getTopAnime("1");
-        Assertions.assertFalse(topAnime.getData().isEmpty());
+    void anime() throws ExecutionException, InterruptedException {
+        TopAnime topAnime = topCaller.anime().page(1).limit(10).consume().get();
+        Assertions.assertEquals("Fullmetal Alchemist: Brotherhood", topAnime.getData().get(0).getTitle());
+        Assertions.assertEquals(10, topAnime.getData().size());
     }
 
     @Test
-    void getTopManga() throws CouldNotGetObjectException {
-        TopManga topManga = topCaller.getTopManga("1");
-        Assertions.assertFalse(topManga.getData().isEmpty());
+    void manga() throws ExecutionException, InterruptedException {
+        TopManga topManga = topCaller.manga().page(1).limit(10).consume().get();
+        Assertions.assertEquals("Berserk", topManga.getData().get(0).getTitle());
+        Assertions.assertEquals(10, topManga.getData().size());
+
     }
 
     @Test
-    void getTopPeople() throws CouldNotGetObjectException {
-        TopPeople topPeople = topCaller.getTopPeople("1");
-        Assertions.assertFalse(topPeople.getData().isEmpty());
+    void people() throws ExecutionException, InterruptedException {
+        TopPeople topPeople = topCaller.people().page(1).limit(10).consume().get();
+        Assertions.assertEquals("Hiroshi Kamiya", topPeople.getData().get(0).getName());
+        Assertions.assertEquals(10, topPeople.getData().size());
     }
 
     @Test
-    void getTopCharacters() throws CouldNotGetObjectException {
-        TopCharacters topCharacters = topCaller.getTopCharacters("1");
-        Assertions.assertFalse(topCharacters.getData().isEmpty());
+    void characters() throws ExecutionException, InterruptedException {
+        TopCharacters topCharacters = topCaller.characters().page(1).limit(10).consume().get();
+        Assertions.assertEquals("Lelouch Lamperouge",topCharacters.getData().get(0).getName());
+        Assertions.assertEquals(10, topCharacters.getData().size());
     }
 
     @Test
-    void getTopReviews() throws CouldNotGetObjectException {
-        TopReviews topReviews = topCaller.getTopReviews("1");
-        // TODO: 27.09.2022 Reviews sind bei Jikan broken
-        //Assertions.assertFalse(topReviews.getData().isEmpty());
+    void reviews() throws ExecutionException, InterruptedException {
+        TopReviews topReviews = topCaller.reviews().page(1).consume().get();
+        // TODO: 29.09.2022 Reviews are broken from Jikan.
     }
 }

@@ -1,5 +1,5 @@
-,https://api.jikan.moe/v4/top/people?page=1
--https://api.jikan.moe/v4/top/reviews?page=1
-0https://api.jikan.moe/v4/top/characters?page=1
-+https://api.jikan.moe/v4/top/anime?page=1
-+https://api.jikan.moe/v4/top/manga?page=1
+ÃBuilt Url. Url = 'https://api.jikan.moe/v4/top/people?limit=10&page=1', Path parameters = '[top, people]', Query parameters = '{limit=10, page=1}', Class = 'model.jikan.top.TopPeople.TopPeople'
+¿Built Url. Url = 'https://api.jikan.moe/v4/top/anime?limit=10&page=1', Path parameters = '[top, anime]', Query parameters = '{limit=10, page=1}', Class = 'model.jikan.top.TopAnime.TopAnime'
+¿Built Url. Url = 'https://api.jikan.moe/v4/top/manga?limit=10&page=1', Path parameters = '[top, manga]', Query parameters = '{limit=10, page=1}', Class = 'model.jikan.top.TopManga.TopManga'
+´Built Url. Url = 'https://api.jikan.moe/v4/top/reviews?page=1', Path parameters = '[top, reviews]', Query parameters = '{page=1}', Class = 'model.jikan.top.TopReviews.TopReviews'
+ÓBuilt Url. Url = 'https://api.jikan.moe/v4/top/characters?limit=10&page=1', Path parameters = '[top, characters]', Query parameters = '{limit=10, page=1}', Class = 'model.jikan.top.TopCharacters.TopCharacters'

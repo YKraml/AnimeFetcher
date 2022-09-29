@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "data"
 })
 @Generated("jsonschema2pojo")
-public class AnimeByIdFull {
+public class AnimeFullById {
 
     @JsonProperty("data")
     private Data data;

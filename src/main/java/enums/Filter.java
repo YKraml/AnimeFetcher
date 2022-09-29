@@ -2,18 +2,10 @@ package enums;
 
 public enum Filter {
 
-    AIRING("airing"),
-    UPCOMING("upcoming"),
-    BY_POPULARITY("bypopularity"),
-    FAVORITE("favorite");
+    airing,
+    upcoming,
+    bypopularity,
+    favorite;
 
-    private final String name;
 
-    Filter(String name) {
-        this.name = name;
-    }
-
-    public String getName() {
-        return name;
-    }
 }

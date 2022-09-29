@@ -1,17 +1,17 @@
 package caller.anime;
 
+import caller.Jikan;
 import enums.AnimeForumFilter;
-import exceptions.CouldNotGetObjectException;
 import model.jikan.anime.animeById.AnimeById;
-import model.jikan.anime.animeByIdFull.AnimeByIdFull;
+import model.jikan.anime.animeByIdFull.AnimeFullById;
 import model.jikan.anime.animeCharacters.AnimeCharacters;
-import model.jikan.anime.animeCharacters.Datum;
 import model.jikan.anime.animeEpisodeById.AnimeEpisodeById;
 import model.jikan.anime.animeEpisodes.AnimeEpisodes;
 import model.jikan.anime.animeExternal.AnimeExternal;
 import model.jikan.anime.animeForum.AnimeForum;
 import model.jikan.anime.animeMoreInfo.AnimeMoreInfo;
 import model.jikan.anime.animeNews.AnimeNews;
+import model.jikan.anime.animeNews.Datum;
 import model.jikan.anime.animePictures.AnimePictures;
 import model.jikan.anime.animeRecommendations.AnimeRecommendations;
 import model.jikan.anime.animeRelations.AnimeRelations;
@@ -22,149 +22,187 @@ import model.jikan.anime.animeStreaming.AnimeStreaming;
 import model.jikan.anime.animeThemes.AnimeThemes;
 import model.jikan.anime.animeUserUpdates.AnimeUserUpdates;
 import model.jikan.anime.animeVideos.AnimeVideos;
+import model.jikan.anime.animeVideosEpisodes.AnimeVideosEpisodes;
+import model.jikan.characters.characterAnime.Anime;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
+import java.util.function.Function;
+import java.util.stream.Collectors;
+
+import static org.junit.jupiter.api.Assertions.*;
+
 class AnimeCallerTest {
 
-    private final AnimeCaller animeCaller = new AnimeCaller();
+    AnimeCaller animeCaller = new AnimeCaller();
 
     @Test
-    void getAnimeByIdFull() throws CouldNotGetObjectException {
-        AnimeByIdFull animeByIdFull = animeCaller.getAnimeByIdFull("1");
-        Assertions.assertEquals(1, animeByIdFull.getData().getMalId());
-        Assertions.assertEquals("https://myanimelist.net/anime/1/Cowboy_Bebop", animeByIdFull.getData().getUrl());
-        Assertions.assertEquals("Cowboy Bebop", animeByIdFull.getData().getTitle());
+    void fullById() throws ExecutionException, InterruptedException {
+        AnimeFullById animeFullById = animeCaller.fullById(1).consume().get();
+        Assertions.assertEquals("Cowboy Bebop", animeFullById.getData().getTitle());
     }
+
     @Test
-    void getAnimeById() throws CouldNotGetObjectException {
-        AnimeById animeById = animeCaller.getAnimeById("1");
-        Assertions.assertEquals(1, animeById.getData().getMalId());
-        Assertions.assertEquals("https://myanimelist.net/anime/1/Cowboy_Bebop", animeById.getData().getUrl());
+    void byId() throws ExecutionException, InterruptedException {
+        AnimeById animeById = animeCaller.byId(1).consume().get();
         Assertions.assertEquals("Cowboy Bebop", animeById.getData().getTitle());
     }
 
     @Test
-    void getAnimeCharacters() throws CouldNotGetObjectException {
-        AnimeCharacters animeCharacters = animeCaller.getAnimeCharacters("1");
-        Datum character = animeCharacters.getData().iterator().next();
-        Assertions.assertEquals(3, character.getCharacter().getMalId());
-        Assertions.assertEquals("Main", character.getRole());
-        Assertions.assertEquals("Black, Jet", character.getCharacter().getName());
+    void characters() throws ExecutionException, InterruptedException {
+        AnimeCharacters animeCharacters = animeCaller.characters(1).consume().get();
+
+        Set<String> characterNames = animeCharacters
+                .getData()
+                .stream()
+                .map(datum -> datum.getCharacter().getName())
+                .collect(Collectors.toSet());
+
+        Assertions.assertTrue(characterNames.contains("Black, Jet"));
+        Assertions.assertTrue(characterNames.contains("Spiegel, Spike"));
     }
 
     @Test
-    void getAnimeStaff() throws CouldNotGetObjectException {
-        AnimeStaff animeStaff = animeCaller.getAnimeStaff("1");
-        model.jikan.anime.animeStaff.Datum person = animeStaff.getData().iterator().next();
-        Assertions.assertEquals(40009, person.getPerson().getMalId());
-        Assertions.assertEquals("Maseba, Yutaka", person.getPerson().getName());
-        Assertions.assertEquals("Producer", person.getPositions().iterator().next());
+    void staff() throws ExecutionException, InterruptedException {
+        AnimeStaff animeStaff = animeCaller.staff(1).consume().get();
+
+        Set<String> characterNames = animeStaff
+                .getData()
+                .stream()
+                .map(datum -> datum.getPerson().getName())
+                .collect(Collectors.toSet());
+
+        Assertions.assertTrue(characterNames.contains("Maseba, Yutaka"));
+        Assertions.assertTrue(characterNames.contains("Minami, Masahiko"));
     }
 
     @Test
-    void getAnimeEpisodes() throws CouldNotGetObjectException {
-        AnimeEpisodes episodes = animeCaller.getAnimeEpisodes("1", "1");
-        model.jikan.anime.animeEpisodes.Datum episode = episodes.getData().iterator().next();
-        Assertions.assertEquals(1, episode.getMalId());
-        Assertions.assertEquals("Asteroid Blues", episode.getTitle());
-        Assertions.assertEquals(false, episode.getFiller());
+    void episodes() throws ExecutionException, InterruptedException {
+        AnimeEpisodes animeEpisodes = animeCaller.episodes(1).page(1).consume().get();
+        Assertions.assertEquals(26, animeEpisodes.getData().size());
     }
 
     @Test
-    void getAnimeEpisodeById() throws CouldNotGetObjectException {
-        AnimeEpisodeById episode = animeCaller.getAnimeEpisodeById("1", "1");
-        Assertions.assertEquals(1, episode.getData().getMalId());
-        Assertions.assertEquals("Asteroid Blues", episode.getData().getTitle());
-        Assertions.assertEquals(false, episode.getData().getFiller());
+    void episodesById() throws ExecutionException, InterruptedException {
+        AnimeEpisodeById animeEpisodeById = animeCaller.episodesById(1, 1).consume().get();
+        Assertions.assertEquals("Asteroid Blues", animeEpisodeById.getData().getTitle());
     }
 
     @Test
-    void getAnimeNews() throws CouldNotGetObjectException {
-        AnimeNews animeNews = animeCaller.getAnimeNews("1", "1");
-        Assertions.assertFalse(animeNews.getData().isEmpty());
+    void news() throws ExecutionException, InterruptedException {
+        AnimeNews animeNews = animeCaller.news(1).page(1).consume().get();
+        Set<String> newsTitels = animeNews.getData().stream().map(Datum::getTitle).collect(Collectors.toSet());
+        Assertions.assertTrue(newsTitels.contains("North American Anime & Manga Releases for September"));
+        Assertions.assertTrue(newsTitels.contains("North American Anime & Manga Releases for November"));
+
     }
 
     @Test
-    void getAnimeForum() throws CouldNotGetObjectException {
-        AnimeForum animeForum = animeCaller.getAnimeForum("1", AnimeForumFilter.ALL);
-        Assertions.assertFalse(animeForum.getData().isEmpty());
+    void forum() throws ExecutionException, InterruptedException {
+        AnimeForum animeForum = animeCaller.forum(1).filter(AnimeForumFilter.episode).consume().get();
+        Set<String> forumTitles = animeForum.getData().stream().map(model.jikan.anime.animeForum.Datum::getTitle).collect(Collectors.toSet());
+        Assertions.assertTrue(forumTitles.contains("Cowboy Bebop Episode 26 Discussion"));
+        Assertions.assertTrue(forumTitles.contains("Cowboy Bebop Episode 25 Discussion"));
     }
 
     @Test
-    void getAnimeVideos() throws CouldNotGetObjectException {
-        AnimeVideos animeVideos = animeCaller.getAnimeVideos("1");
+    void videos() throws ExecutionException, InterruptedException {
+        AnimeVideos animeVideos = animeCaller.videos(1).consume().get();
+        Assertions.assertEquals(26, animeVideos.getData().getEpisodes().size());
         Assertions.assertFalse(animeVideos.getData().getPromo().isEmpty());
-        Assertions.assertFalse(animeVideos.getData().getEpisodes().isEmpty());
     }
 
     @Test
-    void getAnimePictures() throws CouldNotGetObjectException {
-        AnimePictures animePictures = animeCaller.getAnimePictures("1");
-        Assertions.assertFalse(animePictures.getData().isEmpty());
+    void videosEpisodes() throws ExecutionException, InterruptedException {
+        AnimeVideosEpisodes animeVideosEpisodes = animeCaller.videosEpisodes(1).page(1).consume().get();
+        Assertions.assertEquals(26, animeVideosEpisodes.getData().size());
     }
 
     @Test
-    void getAnimeStatistics() throws CouldNotGetObjectException {
-        AnimeStatistics animeStatistics = animeCaller.getAnimeStatistics("1");
-        Assertions.assertTrue(animeStatistics.getData().getCompleted() > 900000);
-        Assertions.assertTrue(animeStatistics.getData().getDropped() > 30000);
+    void pictures() throws ExecutionException, InterruptedException {
+        AnimePictures animePictures = animeCaller.pictures(1).consume().get();
+        Assertions.assertTrue(animePictures.getData().size() > 10);
     }
 
     @Test
-    void getAnimeMoreInfo() throws CouldNotGetObjectException {
-        AnimeMoreInfo animeMoreInfo = animeCaller.getAnimeMoreInfo("1");
-
-        String text = "Suggested Order of Viewing 1. TV Series (26 episodes) 2. Movie (takes place between episodes 22 and 23)";
-        Assertions.assertEquals(text, animeMoreInfo.getData().getMoreinfo());
+    void statistics() throws ExecutionException, InterruptedException {
+        AnimeStatistics animeStatistics = animeCaller.statistics(1).consume().get();
+        Assertions.assertTrue(animeStatistics.getData().getCompleted() >= 950000);
+        Assertions.assertTrue(animeStatistics.getData().getDropped() >= 36000);
     }
 
     @Test
-    void getAnimeRecommendations() throws CouldNotGetObjectException {
-        AnimeRecommendations animeRecommendations = animeCaller.getAnimeRecommendations("1");
-        Assertions.assertFalse(animeRecommendations.getData().isEmpty());
+    void moreInfo() throws ExecutionException, InterruptedException {
+        AnimeMoreInfo animeMoreInfo = animeCaller.moreInfo(1).consume().get();
+        Assertions.assertEquals(
+                "Suggested Order of Viewing 1. TV Series (26 episodes) 2. Movie (takes place between episodes 22 and 23)",
+                animeMoreInfo.getData().getMoreinfo());
     }
 
     @Test
-    void getAnimeUserUpdates() throws CouldNotGetObjectException {
-        AnimeUserUpdates animeUserUpdates = animeCaller.getAnimeUserUpdates("1", "1");
+    void recommendations() throws ExecutionException, InterruptedException {
+        AnimeRecommendations animeRecommendations = animeCaller.recommendations(1).consume().get();
+
+        Set<String> recommendationsTitles = animeRecommendations
+                .getData()
+                .stream()
+                .map(datum -> datum.getEntry().getTitle())
+                .collect(Collectors.toSet());
+
+        Assertions.assertTrue(recommendationsTitles.contains("Samurai Champloo"));
+        Assertions.assertTrue(recommendationsTitles.contains("Trigun"));
+    }
+
+    @Test
+    void userUpdates() throws ExecutionException, InterruptedException {
+        AnimeUserUpdates animeUserUpdates = animeCaller.userUpdates(1).consume().get();
         Assertions.assertFalse(animeUserUpdates.getData().isEmpty());
     }
 
     @Test
-    void getAnimeReviews() throws CouldNotGetObjectException {
-        // TODO: 27.09.2022 Reviews sind bei Jikan broken 
-        AnimeReviews animeReviews = animeCaller.getAnimeReviews("1", "1");
+    void reviews() throws ExecutionException, InterruptedException {
+        AnimeReviews animeReviews = animeCaller.reviews(1).page(1).consume().get();
+        // TODO: 29.09.2022 Reviews are broken from Jikan
         //Assertions.assertFalse(animeReviews.getData().isEmpty());
     }
 
     @Test
-    void getAnimeRelations() throws CouldNotGetObjectException {
-        AnimeRelations animeRelations = animeCaller.getAnimeRelations("1");
-        Assertions.assertFalse(animeRelations.getData().isEmpty());
+    void relations() throws ExecutionException, InterruptedException {
+        AnimeRelations animeRelations = animeCaller.relations(1).consume().get();
+        Set<String> relationTypes = animeRelations
+                .getData()
+                .stream()
+                .map(model.jikan.anime.animeRelations.Datum::getRelation)
+                .collect(Collectors.toSet());
+        Assertions.assertTrue(relationTypes.contains("Adaptation"));
+        Assertions.assertTrue(relationTypes.contains("Side story"));
+        Assertions.assertTrue(relationTypes.contains("Summary"));
     }
 
     @Test
-    void getAnimeThemes() throws CouldNotGetObjectException {
-        AnimeThemes animeThemes = animeCaller.getAnimeThemes("1");
-        Assertions.assertEquals(1, animeThemes.getData().getOpenings().size());
-        Assertions.assertEquals(3, animeThemes.getData().getEndings().size());
+    void themes() throws ExecutionException, InterruptedException {
+        AnimeThemes animeThemes = animeCaller.themes(1).consume().get();
+        List<String> openings = animeThemes.getData().getOpenings();
+        Assertions.assertTrue(openings.contains("\"Tank!\" by The Seatbelts (eps 1-25)"));
     }
 
     @Test
-    void getAnimeExternal() throws CouldNotGetObjectException {
-        AnimeExternal animeExternal = animeCaller.getAnimeExternal("1");
-        Assertions.assertEquals(4, animeExternal.getData().size());
+    void external() throws ExecutionException, InterruptedException {
+        AnimeExternal animeExternal = animeCaller.external(1).consume().get();
+        Assertions.assertFalse(animeExternal.getData().isEmpty());
     }
 
     @Test
-    void getAnimeStreaming() throws CouldNotGetObjectException {
-        AnimeStreaming animeStreaming = animeCaller.getAnimeStreaming("1");
+    void streaming() throws ExecutionException, InterruptedException {
+        AnimeStreaming animeStreaming = animeCaller.streaming(1).consume().get();
         Assertions.assertFalse(animeStreaming.getData().isEmpty());
     }
 
     @Test
-    void getAnimeSearch() {
-        // TODO: 27.09.2022 Search neu machen
+    void search() {
+        // TODO: 29.09.2022 Search testen
     }
 }

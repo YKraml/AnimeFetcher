@@ -1,21 +1,16 @@
 package caller;
 
 import caller.anime.AnimeCaller;
-import caller.character.CharacterCaller;
 import caller.top.TopCaller;
 
 public class Jikan {
 
-    public static AnimeCaller AnimeCaller() {
-        return AnimeCaller.getInstance();
+
+    public static TopCaller top() {
+        return new TopCaller();
     }
 
-    public static CharacterCaller CharacterCaller() {
-        return CharacterCaller.getInstance();
+    public static AnimeCaller anime() {
+        return new AnimeCaller();
     }
-
-    public static TopCaller TopCaller() {
-        return TopCaller.getInstance();
-    }
-
 }

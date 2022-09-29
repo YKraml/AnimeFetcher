@@ -5,27 +5,40 @@
  */
 package main;
 
-import caller.anime.AnimeCaller;
-import exceptions.CouldNotGetObjectException;
+import caller.Jikan;
+import enums.*;
 import model.jikan.anime.animeById.AnimeById;
+import model.jikan.anime.animeByIdFull.AnimeFullById;
+import model.jikan.anime.animeCharacters.AnimeCharacters;
+import model.jikan.anime.animeEpisodeById.AnimeEpisodeById;
+import model.jikan.anime.animeEpisodes.AnimeEpisodes;
+import model.jikan.anime.animeExternal.AnimeExternal;
+import model.jikan.anime.animeForum.AnimeForum;
+import model.jikan.anime.animeMoreInfo.AnimeMoreInfo;
+import model.jikan.anime.animeNews.AnimeNews;
+import model.jikan.anime.animePictures.AnimePictures;
+import model.jikan.anime.animeRecommendations.AnimeRecommendations;
+import model.jikan.anime.animeRelations.AnimeRelations;
+import model.jikan.anime.animeReviews.AnimeReviews;
+import model.jikan.anime.animeSearch.AnimeSearch;
+import model.jikan.anime.animeStaff.AnimeStaff;
+import model.jikan.anime.animeStatistics.AnimeStatistics;
+import model.jikan.anime.animeStreaming.AnimeStreaming;
+import model.jikan.anime.animeThemes.AnimeThemes;
+import model.jikan.anime.animeUserUpdates.AnimeUserUpdates;
+import model.jikan.anime.animeVideos.AnimeVideos;
+import model.jikan.anime.animeVideosEpisodes.AnimeVideosEpisodes;
+
+import java.util.Date;
+import java.util.concurrent.CompletableFuture;
 
 /**
- * @author yanni
+ * @author Yannick Kraml
  */
 public class Main {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) throws CouldNotGetObjectException {
+    public static void main(String[] args) {
 
-
-        AnimeById animeById = AnimeCaller.getInstance().getAnimeById("2134324");
-
-
-        System.out.println(animeById.getData().getTitleEnglish());
-
-        //https://api.jikan.moe/v4/anime/{id}/full
 
     }
 
