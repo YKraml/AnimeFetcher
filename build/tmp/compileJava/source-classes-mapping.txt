@@ -612,9 +612,25 @@ enums/MangaFilter.java
  enums.MangaFilter
 caller/top/TopMangaCaller.java
  caller.top.TopMangaCaller
-caller/Jikan.java
- caller.Jikan
-caller/top/TopAnimeCaller.java
- caller.top.TopAnimeCaller
 caller/top/TopReviewsCaller.java
  caller.top.TopReviewsCaller
+caller/top/TopAnimeCaller.java
+ caller.top.TopAnimeCaller
+caller/character/CharacterSearchCaller.java
+ caller.character.CharacterSearchCaller
+caller/character/CharacterMangaCaller.java
+ caller.character.CharacterMangaCaller
+caller/character/CharacterAnimeCaller.java
+ caller.character.CharacterAnimeCaller
+caller/character/CharacterByIdCaller.java
+ caller.character.CharacterByIdCaller
+caller/character/CharacterPicturesCaller.java
+ caller.character.CharacterPicturesCaller
+caller/character/CharacterFullByIdCaller.java
+ caller.character.CharacterFullByIdCaller
+caller/character/CharacterVoiceActorsCaller.java
+ caller.character.CharacterVoiceActorsCaller
+caller/character/CharacterCaller.java
+ caller.character.CharacterCaller
+caller/Jikan.java
+ caller.Jikan

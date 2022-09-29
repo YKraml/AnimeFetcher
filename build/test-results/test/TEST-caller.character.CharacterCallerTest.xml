@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="caller.character.CharacterCallerTest" tests="7" skipped="0" failures="0" errors="0" timestamp="2022-09-29T15:48:59" hostname="KRAMLSXPS15" time="7.891">
+  <properties/>
+  <testcase name="search()" classname="caller.character.CharacterCallerTest" time="0.011"/>
+  <testcase name="pictures()" classname="caller.character.CharacterCallerTest" time="1.878"/>
+  <testcase name="voiceActors()" classname="caller.character.CharacterCallerTest" time="0.797"/>
+  <testcase name="byId()" classname="caller.character.CharacterCallerTest" time="1.215"/>
+  <testcase name="anime()" classname="caller.character.CharacterCallerTest" time="1.209"/>
+  <testcase name="manga()" classname="caller.character.CharacterCallerTest" time="1.197"/>
+  <testcase name="fullById()" classname="caller.character.CharacterCallerTest" time="1.579"/>
+  <system-out><![CDATA[Built Url. Url = 'https://api.jikan.moe/v4/characters/1/pictures?', Path parameters = '[characters, 1, pictures]', Query parameters = '{}', Class = 'model.jikan.characters.characterPictures.CharacterPictures'
+Built Url. Url = 'https://api.jikan.moe/v4/characters/1/voices?', Path parameters = '[characters, 1, voices]', Query parameters = '{}', Class = 'model.jikan.characters.characterVoiceActors.CharacterVoiceActors'
+Built Url. Url = 'https://api.jikan.moe/v4/characters/1?', Path parameters = '[characters, 1]', Query parameters = '{}', Class = 'model.jikan.characters.characterById.CharacterById'
+Built Url. Url = 'https://api.jikan.moe/v4/characters/1/anime?', Path parameters = '[characters, 1, anime]', Query parameters = '{}', Class = 'model.jikan.characters.characterAnime.CharacterAnime'
+Built Url. Url = 'https://api.jikan.moe/v4/characters/1/manga?', Path parameters = '[characters, 1, manga]', Query parameters = '{}', Class = 'model.jikan.characters.characterManga.CharacterManga'
+Built Url. Url = 'https://api.jikan.moe/v4/characters/1/full?', Path parameters = '[characters, 1, full]', Query parameters = '{}', Class = 'model.jikan.characters.characterFullById.CharacterFullById'
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
