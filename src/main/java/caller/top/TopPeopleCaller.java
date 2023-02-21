@@ -6,17 +6,17 @@ import model.jikan.top.TopPeople.TopPeople;
 public class TopPeopleCaller extends ACaller<TopPeople> {
 
     public TopPeopleCaller(){
-        pathParameters.add("top");
-        pathParameters.add("people");
+        addPathParameter("top");
+        addPathParameter("people");
     }
 
     public TopPeopleCaller page(int page) {
-        queryParameters.put("page", String.valueOf(page));
+        addQueryParameter("page", String.valueOf(page));
         return this;
     }
 
     public TopPeopleCaller limit(int limit) {
-        queryParameters.put("limit", String.valueOf(limit));
+        addQueryParameter("limit", String.valueOf(limit));
         return this;
     }
 }

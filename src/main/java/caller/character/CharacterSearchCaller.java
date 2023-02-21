@@ -8,36 +8,36 @@ import model.jikan.characters.charactersSearch.CharactersSearch;
 public class CharacterSearchCaller extends ACaller<CharactersSearch> {
 
     public CharacterSearchCaller() {
-        pathParameters.add("characters");
+        addPathParameter("characters");
     }
 
     public CharacterSearchCaller page(int page) {
-        queryParameters.put("page", String.valueOf(page));
+        addQueryParameter("page", String.valueOf(page));
         return this;
     }
 
     public CharacterSearchCaller limit(int limit) {
-        queryParameters.put("limit", String.valueOf(limit));
+        addQueryParameter("limit", String.valueOf(limit));
         return this;
     }
 
     public CharacterSearchCaller query(String query) {
-        queryParameters.put("q", query);
+        addQueryParameter("q", query);
         return this;
     }
 
     public CharacterSearchCaller orderBy(CharactersSearchQueryOrderBy orderBy) {
-        queryParameters.put("order_by", orderBy.name());
+        addQueryParameter("order_by", orderBy.name());
         return this;
     }
 
     public CharacterSearchCaller sort(SearchQuerySort sort) {
-        queryParameters.put("sort", sort.name());
+        addQueryParameter("sort", sort.name());
         return this;
     }
 
     public CharacterSearchCaller letter(String letter) {
-        queryParameters.put("letter", letter);
+        addQueryParameter("letter", letter);
         return this;
     }
 

@@ -1,6 +1,0 @@
-ÒBuilt Url. Url = 'https://api.jikan.moe/v4/characters/1/pictures?', Path parameters = '[characters, 1, pictures]', Query parameters = '{}', Class = 'model.jikan.characters.characterPictures.CharacterPictures'
-ÔBuilt Url. Url = 'https://api.jikan.moe/v4/characters/1/voices?', Path parameters = '[characters, 1, voices]', Query parameters = '{}', Class = 'model.jikan.characters.characterVoiceActors.CharacterVoiceActors'
-·Built Url. Url = 'https://api.jikan.moe/v4/characters/1?', Path parameters = '[characters, 1]', Query parameters = '{}', Class = 'model.jikan.characters.characterById.CharacterById'
-ÆBuilt Url. Url = 'https://api.jikan.moe/v4/characters/1/anime?', Path parameters = '[characters, 1, anime]', Query parameters = '{}', Class = 'model.jikan.characters.characterAnime.CharacterAnime'
-ÆBuilt Url. Url = 'https://api.jikan.moe/v4/characters/1/manga?', Path parameters = '[characters, 1, manga]', Query parameters = '{}', Class = 'model.jikan.characters.characterManga.CharacterManga'
-ÊBuilt Url. Url = 'https://api.jikan.moe/v4/characters/1/full?', Path parameters = '[characters, 1, full]', Query parameters = '{}', Class = 'model.jikan.characters.characterFullById.CharacterFullById'

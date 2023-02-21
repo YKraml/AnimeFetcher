@@ -8,27 +8,27 @@ import model.jikan.top.TopAnime.TopAnime;
 public class TopAnimeCaller extends ACaller<TopAnime> {
 
     protected TopAnimeCaller() {
-        pathParameters.add("top");
-        pathParameters.add("anime");
+        addPathParameter("top");
+        addPathParameter("anime");
     }
 
     public TopAnimeCaller type(AnimeSearchQueryType type) {
-        queryParameters.put("type", type.name());
+        addQueryParameter("type", type.name());
         return this;
     }
 
     public TopAnimeCaller filter(Filter filter) {
-        queryParameters.put("filter", filter.name());
+        addQueryParameter("filter", filter.name());
         return this;
     }
 
     public TopAnimeCaller page(int page) {
-        queryParameters.put("page", String.valueOf(page));
+        addQueryParameter("page", String.valueOf(page));
         return this;
     }
 
     public TopAnimeCaller limit(int limit) {
-        queryParameters.put("limit", String.valueOf(limit));
+        addQueryParameter("limit", String.valueOf(limit));
         return this;
     }
 }

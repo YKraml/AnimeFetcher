@@ -5,8 +5,8 @@ import model.jikan.anime.animeStreaming.AnimeStreaming;
 
 public class AnimeStreamingCaller extends ACaller<AnimeStreaming> {
     public AnimeStreamingCaller(int id) {
-        pathParameters.add("anime");
-        pathParameters.add(String.valueOf(id));
-        pathParameters.add("streaming");
+        addPathParameter("anime");
+        addPathParameter(String.valueOf(id));
+        addPathParameter("streaming");
     }
 }

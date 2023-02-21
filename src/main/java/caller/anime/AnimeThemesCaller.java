@@ -5,8 +5,8 @@ import model.jikan.anime.animeThemes.AnimeThemes;
 
 public class AnimeThemesCaller extends ACaller<AnimeThemes> {
     public AnimeThemesCaller(int id) {
-        pathParameters.add("anime");
-        pathParameters.add(String.valueOf(id));
-        pathParameters.add("themes");
+        addPathParameter("anime");
+        addPathParameter(String.valueOf(id));
+        addPathParameter("themes");
     }
 }

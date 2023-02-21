@@ -6,6 +6,7 @@
 package main;
 
 import caller.Jikan;
+import caller.character.CharacterCaller;
 import enums.*;
 import model.jikan.anime.animeById.AnimeById;
 import model.jikan.anime.animeByIdFull.AnimeFullById;
@@ -28,17 +29,30 @@ import model.jikan.anime.animeThemes.AnimeThemes;
 import model.jikan.anime.animeUserUpdates.AnimeUserUpdates;
 import model.jikan.anime.animeVideos.AnimeVideos;
 import model.jikan.anime.animeVideosEpisodes.AnimeVideosEpisodes;
+import model.jikan.characters.characterFullById.CharacterFullById;
+import org.junit.jupiter.api.Assertions;
 
 import java.util.Date;
 import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
 
 /**
  * @author Yannick Kraml
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
 
+        CharacterCaller characterCaller = Jikan.characters();
+
+        System.out.println("START");
+        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
+        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
+        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
+        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
+        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
+        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
+        System.out.println("ENDE");
 
     }
 

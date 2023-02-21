@@ -1,8 +1,6 @@
 package caller.top;
 
-import caller.ICaller;
-
-public class TopCaller implements ICaller {
+public class TopCaller {
 
     public TopAnimeCaller anime() {
         return new TopAnimeCaller();

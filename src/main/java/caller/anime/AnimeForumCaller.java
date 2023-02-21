@@ -6,13 +6,13 @@ import model.jikan.anime.animeForum.AnimeForum;
 
 public class AnimeForumCaller extends ACaller<AnimeForum> {
     public AnimeForumCaller(int id) {
-        pathParameters.add("anime");
-        pathParameters.add(String.valueOf(id));
-        pathParameters.add("forum");
+        addPathParameter("anime");
+        addPathParameter(String.valueOf(id));
+        addPathParameter("forum");
     }
 
     public AnimeForumCaller filter(AnimeForumFilter filter) {
-        queryParameters.put("filter", filter.name());
+        addQueryParameter("filter", filter.name());
         return this;
     }
 }

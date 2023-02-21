@@ -6,14 +6,14 @@ import model.jikan.anime.animeEpisodes.AnimeEpisodes;
 public class AnimeEpisodesCaller extends ACaller<AnimeEpisodes> {
 
     public AnimeEpisodesCaller(int id) {
-        pathParameters.add("anime");
-        pathParameters.add(String.valueOf(id));
-        pathParameters.add("episodes");
+        addPathParameter("anime");
+        addPathParameter(String.valueOf(id));
+        addPathParameter("episodes");
     }
 
 
     public AnimeEpisodesCaller page(int page) {
-        queryParameters.put("page", String.valueOf(page));
+        addQueryParameter("page", String.valueOf(page));
         return this;
     }
 }
