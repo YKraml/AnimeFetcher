@@ -2,11 +2,13 @@ package caller.top;
 
 import caller.ACaller;
 import model.jikan.top.TopCharacters.TopCharacters;
+import util.ApiCaller;
 
 public class TopCharactersCaller extends ACaller<TopCharacters> {
 
-    public TopCharactersCaller() {
-        addPathParameter("top");
+    public TopCharactersCaller(ApiCaller apiCaller) {
+      super(apiCaller);
+      addPathParameter("top");
         addPathParameter("characters");
     }
 

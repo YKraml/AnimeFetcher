@@ -4,11 +4,13 @@ import caller.ACaller;
 import enums.AnimeSearchQueryType;
 import enums.Filter;
 import model.jikan.top.TopAnime.TopAnime;
+import util.ApiCaller;
 
 public class TopAnimeCaller extends ACaller<TopAnime> {
 
-    protected TopAnimeCaller() {
-        addPathParameter("top");
+    protected TopAnimeCaller(ApiCaller apiCaller) {
+      super(apiCaller);
+      addPathParameter("top");
         addPathParameter("anime");
     }
 

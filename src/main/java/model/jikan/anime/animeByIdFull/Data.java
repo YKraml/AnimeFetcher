@@ -95,7 +95,7 @@ public class Data {
     @JsonProperty("rating")
     private String rating;
     @JsonProperty("score")
-    private Integer score;
+    private Double score;
     @JsonProperty("scored_by")
     private Integer scoredBy;
     @JsonProperty("rank")
@@ -322,12 +322,12 @@ public class Data {
     }
 
     @JsonProperty("score")
-    public Integer getScore() {
+    public Double getScore() {
         return score;
     }
 
     @JsonProperty("score")
-    public void setScore(Integer score) {
+    public void setScore(Double score) {
         this.score = score;
     }
 

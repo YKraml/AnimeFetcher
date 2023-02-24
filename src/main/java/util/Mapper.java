@@ -1,18 +1,16 @@
 package util;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import exceptions.CouldNotMapException;
 
-public class MyObjectMapper {
+public class Mapper {
 
     private final ObjectMapper objectMapper;
 
-    public MyObjectMapper() {
+    public Mapper() {
         this.objectMapper = new ObjectMapper();
     }
-
 
     public <T> T map(String data, Class<T> t) throws CouldNotMapException {
 

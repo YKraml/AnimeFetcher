@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="caller.anime.AnimeFullByIdCallerTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-02-24T21:29:35" hostname="KRAMLSXPS15" time="0.828">
+  <properties/>
+  <testcase name="test1()" classname="caller.anime.AnimeFullByIdCallerTest" time="0.828"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

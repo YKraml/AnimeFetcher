@@ -9,10 +9,11 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.concurrent.ExecutionException;
+import util.ApiCallerJikan;
 
 class TopCallerTest {
 
-    TopCaller topCaller = new TopCaller();
+    TopCaller topCaller = new TopCaller(new ApiCallerJikan());
 
     @Test
     void anime() throws ExecutionException, InterruptedException {
