@@ -1,5 +1,6 @@
 package caller.top;
 
+import caller.Jikan;
 import model.jikan.top.TopAnime.TopAnime;
 import model.jikan.top.TopCharacters.TopCharacters;
 import model.jikan.top.TopManga.TopManga;
@@ -13,7 +14,7 @@ import util.ApiCallerJikan;
 
 class TopCallerTest {
 
-    TopCaller topCaller = new TopCaller(new ApiCallerJikan());
+    TopCaller topCaller = Jikan.top();
 
     @Test
     void anime() throws ExecutionException, InterruptedException {

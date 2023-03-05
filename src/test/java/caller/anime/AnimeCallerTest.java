@@ -1,5 +1,6 @@
 package caller.anime;
 
+import caller.Jikan;
 import enums.AnimeForumFilter;
 import model.jikan.anime.animeById.AnimeById;
 import model.jikan.anime.animeByIdFull.AnimeFullById;
@@ -34,7 +35,7 @@ import util.Mapper;
 
 class AnimeCallerTest {
 
-  AnimeCaller animeCaller = new AnimeCaller(new ApiCallerJikan());
+  AnimeCaller animeCaller = Jikan.anime();
 
   @Test
   void fullById() throws ExecutionException, InterruptedException {

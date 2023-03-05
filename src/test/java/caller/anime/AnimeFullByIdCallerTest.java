@@ -1,6 +1,7 @@
 package caller.anime;
 
 import exceptions.CouldNotReachJikanException;
+import exceptions.MyException;
 import model.jikan.anime.animeByIdFull.AnimeFullById;
 import model.jikan.anime.animeByIdFull.Data;
 import org.hamcrest.MatcherAssert;
@@ -17,7 +18,7 @@ class AnimeFullByIdCallerTest {
   private AnimeFullByIdCaller caller;
 
   @BeforeEach
-  void setup() throws CouldNotReachJikanException {
+  void setup() throws MyException {
     ApiCaller apiCaller = Mockito.mock(ApiCaller.class);
     Mockito.when(apiCaller.getDataFromJikan(Mockito.anyString())).thenReturn(JSON);
     caller = new AnimeFullByIdCaller(1, apiCaller);

@@ -4,6 +4,7 @@ import exceptions.CouldNotGetObjectException;
 import exceptions.CouldNotMapException;
 import exceptions.CouldNotParseUrlException;
 import exceptions.CouldNotReachJikanException;
+import exceptions.MyException;
 import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -38,7 +39,7 @@ public abstract class ACaller<T> {
         Class<T> clazz = (Class<T>) Class.forName(className);
 
         return getObject(pathParameters, queryParameters, clazz);
-      } catch (CouldNotGetObjectException | ClassNotFoundException e) {
+      } catch (MyException | ClassNotFoundException e) {
         throw new RuntimeException(e);
       }
     };
@@ -54,7 +55,7 @@ public abstract class ACaller<T> {
   }
 
   private <K> K getObject(List<String> pathParameters, Map<String, String> queryParameters,
-      Class<K> clazz) throws CouldNotGetObjectException {
+      Class<K> clazz) throws MyException {
 
     String url;
     try {

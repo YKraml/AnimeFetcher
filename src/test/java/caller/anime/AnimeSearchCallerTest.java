@@ -1,5 +1,6 @@
 package caller.anime;
 
+import caller.Jikan;
 import enums.AnimeSearchQueryOrderBy;
 import enums.SearchQuerySort;
 import model.jikan.anime.animeSearch.AnimeSearch;
@@ -14,7 +15,7 @@ class AnimeSearchCallerTest {
 
   @BeforeEach
   void setUp() {
-    caller = new AnimeSearchCaller(new ApiCallerJikan());
+    caller = Jikan.anime().search();
   }
 
   @Test

@@ -1,5 +1,6 @@
 package caller.character;
 
+import caller.Jikan;
 import model.jikan.characters.characterAnime.CharacterAnime;
 import model.jikan.characters.characterById.CharacterById;
 import model.jikan.characters.characterFullById.CharacterFullById;
@@ -14,7 +15,7 @@ import util.ApiCallerJikan;
 
 class CharacterCallerTest {
 
-  CharacterCaller characterCaller = new CharacterCaller(new ApiCallerJikan());
+  CharacterCaller characterCaller = Jikan.characters();
 
 
   @Test

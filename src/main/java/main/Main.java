@@ -41,19 +41,19 @@ import java.util.concurrent.ExecutionException;
  */
 public class Main {
 
-    public static void main(String[] args) throws ExecutionException, InterruptedException {
+  public static void main(String[] args) {
 
-        CharacterCaller characterCaller = Jikan.characters();
-
-        System.out.println("START");
-        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
-        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
-        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
-        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
-        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
-        System.out.println(characterCaller.fullById(1).consume().get().getData().getName());
-        System.out.println("ENDE");
-
+    System.out.println("START");
+    for (int i = 1; i < 1000; i++) {
+      try {
+        AnimeFullById animeFullById = Jikan.anime().fullById(i).consume().join();
+        System.out.println(i + " " + animeFullById.getData().getTitle());
+      }catch (Exception e){
+        System.out.println(i + " Could not load.");
+      }
     }
+    System.out.println("ENDE");
+
+  }
 
 }
