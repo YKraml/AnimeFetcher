@@ -11,6 +11,6 @@ public class CouldNotReadFileException extends MyException {
 
   @Override
   protected String getPrivateMessage() {
-    return String.format("Could not read cashed File '%s'.", filePath)
+    return String.format("Could not read cashed File '%s'.", filePath);
   }
 }
